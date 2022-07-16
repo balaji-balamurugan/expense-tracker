@@ -10,7 +10,35 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'expense',
+    loadChildren: () => import('./expense/expense.module').then( m => m.ExpensePageModule)
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+    path: 'goals',
+    loadChildren: () => import('./goals/goals.module').then( m => m.GoalsPageModule)
+  },
+  {
+    path: 'savings',
+    loadChildren: () => import('./savings/savings.module').then( m => m.SavingsPageModule)
+  },
+  {
+    path: 'reminder',
+    loadChildren: () => import('./reminder/reminder.module').then( m => m.ReminderPageModule)
+  },
+  {
+    path: 'income',
+    loadChildren: () => import('./income/income.module').then( m => m.IncomePageModule)
+  },
+  {
+    path: 'overview',
+    loadChildren: () => import('./overview/overview.module').then( m => m.OverviewPageModule)
+  },
+
 ];
 
 @NgModule({

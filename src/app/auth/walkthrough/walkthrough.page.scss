@@ -1,0 +1,29 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-card {
+  box-shadow: none;
+
+  ion-img {
+    height: 150px;
+    object-fit: contain;
+  }
+
+  ion-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

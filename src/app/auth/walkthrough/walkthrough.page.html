@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>walkthrough</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper [autoplay]="true" [pagination]="true" [loop]="true">
+    <ng-template swiperSlide>
+      <ion-card>
+        <ion-card-header>
+          <ion-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSc2oCtU1N2NxFf40X1FawnG9KBaz54fQ7vw&usqp=CAU">
+          </ion-img>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-title class="ion-margin-bottom">Fresh Food</ion-card-title>
+          <p>Easily find your type of food craving and you'll get delivery in wide range</p>
+        </ion-card-content>
+        <ion-item lines="none">
+          <ion-button fill="clear" slot="end" color="dark">Next</ion-button>
+        </ion-item>
+      </ion-card>
+
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-card>
+        <ion-card-header>
+          <ion-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSc2oCtU1N2NxFf40X1FawnG9KBaz54fQ7vw&usqp=CAU">
+          </ion-img>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-title class="ion-margin-bottom">Fresh Food</ion-card-title>
+          <p>Easily find your type of food craving and you'll get delivery in wide range</p>
+        </ion-card-content>
+        <ion-item lines="none">
+          <ion-button fill="clear" slot="end" color="dark">Next</ion-button>
+        </ion-item>
+      </ion-card>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-card>
+        <ion-card-header>
+          <ion-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSc2oCtU1N2NxFf40X1FawnG9KBaz54fQ7vw&usqp=CAU">
+          </ion-img>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-card-title class="ion-margin-bottom">Fresh Food</ion-card-title>
+          <p>Easily find your type of food craving and you'll get delivery in wide range</p>
+        </ion-card-content>
+        <!-- <ion-item lines="none"> -->
+        <ion-button expand="block" [routerLink]="['/auth/login']">Get Started </ion-button>
+        <!-- </ion-item> -->
+      </ion-card>
+    </ng-template>
+  </swiper>
+</ion-content>

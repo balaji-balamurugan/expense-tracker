@@ -1,0 +1,95 @@
+ion-header ion-toolbar {
+  --background: transparent;
+}
+
+.login-list {
+  .social-login-button {
+    ion-button {
+      margin-top: 8px;
+      font-size: 13px;
+    }
+
+    .social-name {
+      // flex: 1;
+      margin-left: 16px;
+    }
+
+    ion-img {
+      height: 25px;
+      background: #fff;
+      padding: 5px;
+      border-radius: 4px;
+    }
+  }
+
+  .sub-line {
+    position: relative;
+    font-size: 12px;
+    color: var(--ion-color-medium);
+    text-align: center;
+
+    &::after {
+      position: absolute;
+      content: "";
+      right: 0;
+      width: 20%;
+      height: 1px;
+      background: #e7e7e7;
+      bottom: 0;
+      margin: auto;
+      top: 0;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      width: 20%;
+      height: 1px;
+      background: #e7e7e7;
+      bottom: 0;
+      margin: auto;
+      top: 0;
+    }
+  }
+
+  .social-login-wrapper {
+    ion-item {
+      --padding-start: 0;
+      --inner-padding-end: 0;
+
+      ion-label {
+        font-size: 13px;
+      }
+
+      ion-input {
+        font-size: 13px;
+        --background: var(--ion-color-light);
+        --padding-start: 16px;
+      }
+    }
+
+    .number-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 100%;
+      background: var(--ion-color-light);
+
+      ion-button {
+        --border-radius: 0;
+        height: 37px;
+      }
+    }
+  }
+}
+
+@media (min-width: 767px) {
+  .sub-line::before {
+    width: 37%;
+  }
+
+  .sub-line::after {
+    width: 37%;
+  }
+}
