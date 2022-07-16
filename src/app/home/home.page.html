@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Blank
@@ -7,14 +7,100 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <h1>swiper</h1> -->
+
+<!-- <swiper #swiper>
+    <ng-template swiperSlide>Slide 1</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
+    <ng-template swiperSlide>Slide 3</ng-template>
+  </swiper> -->
+<ion-content [fullscreen]="true">
+  <swiper [autoplay]="true" [pagination]="true" [loop]="true">
+    <ng-template swiperSlide>
+      <ion-img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSc2oCtU1N2NxFf40X1FawnG9KBaz54fQ7vw&usqp=CAU">
+      </ion-img>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-img src="https://icons-for-free.com/download-icon-food+icon-1320184414775447246_512.png">
+      </ion-img>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Food_Bank_icon.svg/2048px-Food_Bank_icon.svg.png">
+      </ion-img>
+    </ng-template>
+  </swiper>
+
+
+
+
+  <div class="ion-hide">
+    <div id="container">
+      <h1 class="text-3xl font-bold underline  bg-black">
+        Hello world!
+      </h1>
+
+      <br />
+      <br />
+      <br />
+
+      <input class="border-2 border-rose-600 ...">
+
+      <br />
+      <br />
+      <div class="bg-origin-border p-4 border-4 border-dashed ..."
+        style="background-image: url('https://codecanyon.img.customer.envatousercontent.com/files/344456479/590x300_preview.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=300&s=bfe2c06f9fdc7ea6e77ff35a1da71811')">
+      </div>
+
+      <br />
+      <div class="divide-y divide-dashed">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+      </div>
+      <strong>Ready to create an app?</strong>
+      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer"
+          href="https://ionicframework.com/docs/components">UI
+          Components</a></p>
+    </div>
+    <div class="shadow-md ...">
+      sdsd
+    </div>
+    <button class="... ring-2 ring-blue-500">
+      Create account
+    </button>
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th>Song</th>
+          <th>Artist</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+          <td>Malcolm Lockyer</td>
+          <td>1961</td>
+        </tr>
+        <tr>
+          <td>Witchy Woman</td>
+          <td>The Eagles</td>
+          <td>1972</td>
+        </tr>
+        <tr>
+          <td>Shining Star</td>
+          <td>Earth, Wind, and Fire</td>
+          <td>1975</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</ion-content>
+</ion-content> -->
