@@ -25,3 +25,22 @@
 #container a {
   text-decoration: none;
 }
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+ion-img {
+  height: 150px;
+  object-fit: contain;
+}
