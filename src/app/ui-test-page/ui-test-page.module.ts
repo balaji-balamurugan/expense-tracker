@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
 import { IonicModule } from '@ionic/angular';
-import { AuthPageRoutingModule } from './auth-routing.module';
-import { AuthPage } from './auth.page';
+
+import { UiTestPagePageRoutingModule } from './ui-test-page-routing.module';
+
+import { UiTestPagePage } from './ui-test-page.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AuthPageRoutingModule
+    UiTestPagePageRoutingModule
   ],
-  declarations: [AuthPage]
+  declarations: [UiTestPagePage]
 })
-export class AuthPageModule {}
+export class UiTestPagePageModule {}

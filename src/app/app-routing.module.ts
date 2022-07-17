@@ -8,11 +8,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'auth',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'expense',
-    loadChildren: () => import('./expense/expense.module').then( m => m.ExpensePageModule)
+    loadChildren: () => import('./pages/expense/expense.module').then( m => m.ExpensePageModule)
   },
   {
     path: 'auth',
@@ -20,23 +21,31 @@ const routes: Routes = [
   },
   {
     path: 'goals',
-    loadChildren: () => import('./goals/goals.module').then( m => m.GoalsPageModule)
+    loadChildren: () => import('./pages/goals/goals.module').then( m => m.GoalsPageModule)
   },
   {
     path: 'savings',
-    loadChildren: () => import('./savings/savings.module').then( m => m.SavingsPageModule)
+    loadChildren: () => import('./pages/savings/savings.module').then( m => m.SavingsPageModule)
   },
   {
     path: 'reminder',
-    loadChildren: () => import('./reminder/reminder.module').then( m => m.ReminderPageModule)
+    loadChildren: () => import('./pages/reminder/reminder.module').then( m => m.ReminderPageModule)
   },
   {
     path: 'income',
-    loadChildren: () => import('./income/income.module').then( m => m.IncomePageModule)
+    loadChildren: () => import('./pages/income/income.module').then( m => m.IncomePageModule)
   },
   {
     path: 'overview',
-    loadChildren: () => import('./overview/overview.module').then( m => m.OverviewPageModule)
+    loadChildren: () => import('./pages/overview/overview.module').then( m => m.OverviewPageModule)
+  },
+  {
+    path: 'ui-test-page',
+    loadChildren: () => import('./ui-test-page/ui-test-page.module').then( m => m.UiTestPagePageModule)
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
   },
 
 ];
