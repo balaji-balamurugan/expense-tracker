@@ -10,7 +10,7 @@
 <ion-content>
 
   <div class="wave">
-    <swiper [slidesPerView]="2.5" [loop]="true">
+    <swiper class="overview-swiper-wrapper" [slidesPerView]="2.5" [loop]="true">
       <ng-template swiperSlide>
         <ion-card class="ion-text-start">
           <ion-card-header class="ion-padding">
@@ -56,7 +56,7 @@
 
   <swiper [slidesPerView]="2.5" [loop]="true">
     <ng-template swiperSlide>
-      <ion-card class="ion-text-start">
+      <ion-card>
         <ion-card-header class="ion-padding">
           <ion-icon name="add-circle-outline"></ion-icon>
           <ion-card-subtitle class="ion-text-capitalize">Savings</ion-card-subtitle>
@@ -64,7 +64,7 @@
       </ion-card>
     </ng-template>
     <ng-template swiperSlide>
-      <ion-card class="ion-text-start">
+      <ion-card>
         <ion-card-header class="ion-padding">
           <ion-icon name="notifications-circle-outline"></ion-icon>
           <ion-card-subtitle class="ion-text-capitalize">Reminders</ion-card-subtitle>
@@ -72,7 +72,7 @@
       </ion-card>
     </ng-template>
     <ng-template swiperSlide>
-      <ion-card class="ion-text-start">
+      <ion-card>
         <ion-card-header class="ion-padding">
           <ion-icon name="notifications-circle-outline"></ion-icon>
           <ion-card-subtitle class="ion-text-capitalize">Reminders</ion-card-subtitle>
