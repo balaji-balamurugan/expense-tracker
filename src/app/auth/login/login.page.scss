@@ -3,6 +3,12 @@ ion-header ion-toolbar {
 }
 
 .login-list {
+  ion-list-header {
+    ion-label {
+      margin-top: 0;
+    }
+  }
+
   .social-login-button {
     ion-button {
       margin-top: 8px;

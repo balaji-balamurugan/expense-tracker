@@ -8,13 +8,16 @@ import { OverviewPageRoutingModule } from './overview-routing.module';
 
 import { OverviewPage } from './overview.page';
 
+import { SwiperModule } from 'swiper/angular';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    OverviewPageRoutingModule
+    OverviewPageRoutingModule,
+    SwiperModule,
   ],
-  declarations: [OverviewPage]
+  declarations: [OverviewPage],
 })
 export class OverviewPageModule {}
