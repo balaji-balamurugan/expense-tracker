@@ -11,5 +11,7 @@
 
 
 .overview-swiper-wrapper {
-  ion-card {}
+  ion-card {
+    min-height: 180px !important;
+  }
 }
