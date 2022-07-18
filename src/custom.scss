@@ -15,3 +15,8 @@
 :root {
   --ion-font-family: "Poppins";
 }
+
+
+ion-item {
+  --border-color: var(--ion-color-light);
+}

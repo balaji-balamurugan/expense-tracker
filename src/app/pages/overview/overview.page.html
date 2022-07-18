@@ -4,6 +4,11 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Overview</ion-title>
+    <ion-buttons slot="end">
+      <ion-button size="small" [routerLink]="['/add']">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -86,7 +91,7 @@
       <ion-label>
         <b>Latest Entries</b>
       </ion-label>
-      <ion-button slot="end" size="small">
+      <ion-button slot="end" size="small" [routerLink]="['/entries']">
         <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -98,8 +103,8 @@
         <p>20 Feb 2020</p>
       </ion-label>
       <ion-text slot="end">
-        <h6>-$200 + Vat 1%</h6>
-        <p>Google Pay</p>
+        <p>-$200 + Vat 1%</p>
+        <small>Google Pay</small>
       </ion-text>
     </ion-item>
 

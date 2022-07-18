@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Entries</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="entries-list">
+    <ion-list-header>
+      <ion-label><b>Latest Entries</b></ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let num of [].constructor(10);">
+      <ion-icon name="fast-food-outline" slot="start" size="small"></ion-icon>
+      <ion-label>
+        <h6><b>Food</b></h6>
+        <p>20 Feb 2020</p>
+      </ion-label>
+      <ion-text class="ion-text-end" slot="end">
+        <p>
+          <ion-text color="dark">-$200 + Vat 1%</ion-text>
+        </p>
+        <small>
+          <ion-text color="medium">
+            Google Pay
+          </ion-text>
+        </small>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>

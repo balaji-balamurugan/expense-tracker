@@ -3,6 +3,8 @@ ion-header ion-toolbar {
 }
 
 .login-list {
+  background: var(--ion-color-light);
+
   ion-list-header {
     ion-label {
       margin-top: 0;
@@ -70,7 +72,7 @@ ion-header ion-toolbar {
 
       ion-input {
         font-size: 13px;
-        --background: var(--ion-color-light);
+        --background: var(--ion-color-white);
         --padding-start: 16px;
       }
     }
@@ -80,7 +82,7 @@ ion-header ion-toolbar {
       flex-direction: row;
       justify-content: space-evenly;
       width: 100%;
-      background: var(--ion-color-light);
+      background: var(--ion-color-white);
 
       ion-button {
         --border-radius: 0;

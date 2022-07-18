@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Choose Date</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-datetime presentation="date" size="cover"></ion-datetime>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block">Set Start Date (20 Oct, 2021)</ion-button>
+  </ion-toolbar>
+</ion-footer>

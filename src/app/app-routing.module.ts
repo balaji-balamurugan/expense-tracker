@@ -23,11 +23,6 @@ const routes: Routes = [
       import('./auth/auth.module').then((m) => m.AuthPageModule),
   },
   {
-    path: 'goals',
-    loadChildren: () =>
-      import('./pages/goals/goals.module').then((m) => m.GoalsPageModule),
-  },
-  {
     path: 'savings',
     loadChildren: () =>
       import('./pages/savings/savings.module').then((m) => m.SavingsPageModule),
@@ -58,6 +53,42 @@ const routes: Routes = [
         (m) => m.UiTestPagePageModule
       ),
   },
+  {
+    path: 'modal-add-income',
+    loadChildren: () =>
+      import('./pages/modal-add-income/modal-add-income.module').then(
+        (m) => m.ModalAddIncomePageModule
+      ),
+  },
+  {
+    path: 'modal-add-expense',
+    loadChildren: () =>
+      import('./pages/modal-add-expense/modal-add-expense.module').then(
+        (m) => m.ModalAddExpensePageModule
+      ),
+  },
+  {
+    path: 'entries',
+    loadChildren: () =>
+      import('./pages/entries/entries.module').then((m) => m.EntriesPageModule),
+  },
+  {
+    path: 'add',
+    loadChildren: () =>
+      import('./pages/add/add.module').then((m) => m.AddPageModule),
+  },
+  {
+    path: 'add-goal',
+    loadChildren: () =>
+      import('./pages/add-goal/add-goal.module').then(
+        (m) => m.AddGoalPageModule
+      ),
+  },  {
+    path: 'modal-date',
+    loadChildren: () => import('./pages/modal-date/modal-date.module').then( m => m.ModalDatePageModule)
+  },
+
+
   // {
   //   path: 'test',
   //   loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
