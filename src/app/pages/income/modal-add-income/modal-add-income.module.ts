@@ -1,11 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { ModalAddIncomePageRoutingModule } from './modal-add-income-routing.module';
-
 import { ModalAddIncomePage } from './modal-add-income.page';
 
 @NgModule({
@@ -13,9 +10,9 @@ import { ModalAddIncomePage } from './modal-add-income.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ModalAddIncomePageRoutingModule,
     ReactiveFormsModule,
+    ModalAddIncomePageRoutingModule,
   ],
   declarations: [ModalAddIncomePage],
 })
-export class ModalAddIncomePageModule {}
+export class ModalAddIncomePageModule { }

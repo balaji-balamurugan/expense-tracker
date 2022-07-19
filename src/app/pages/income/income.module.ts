@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,8 +13,9 @@ import { IncomePage } from './income.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     IncomePageRoutingModule
   ],
   declarations: [IncomePage]
 })
-export class IncomePageModule {}
+export class IncomePageModule { }
