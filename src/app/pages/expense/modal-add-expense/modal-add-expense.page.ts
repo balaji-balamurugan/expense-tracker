@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ModalDatePage } from '../../modal-date/modal-date.page';
 
 @Component({
   selector: 'app-modal-add-expense',
@@ -15,5 +16,11 @@ export class ModalAddExpensePage implements OnInit {
     this.modalController.dismiss({
       dismissed: true,
     });
+  }
+  async date() {
+    const modal = await this.modalController.create({
+      component: ModalDatePage,
+    });
+    return await modal.present();
   }
 }

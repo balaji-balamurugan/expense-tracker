@@ -9,31 +9,33 @@
 
 <ion-content>
   <div class="wave">
-    <swiper [slidesPerView]="2.5" [loop]="true">
-      <ng-template swiperSlide>
-        <ion-card>
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-text-center">
           <ion-card-header class="ion-padding">
             <ion-icon name="notifications-circle-outline"></ion-icon>
           </ion-card-header>
         </ion-card>
-      </ng-template>
-      <ng-template swiperSlide>
-        <ion-card (click)="addIncome()">
+      </ion-col>
+      <ion-col>
+        <ion-card class="ion-text-center" (click)="addIncome()">
           <ion-card-header class="ion-padding">
             <ion-icon name="add-circle-outline"></ion-icon>
             <ion-card-subtitle class="ion-text-capitalize">Add Income</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
-      </ng-template>
-      <ng-template swiperSlide>
-        <ion-card (click)="addExpense()">
+      </ion-col>
+      <ion-col>
+        <ion-card class="ion-text-center" (click)="addExpense()">
           <ion-card-header class="ion-padding">
             <ion-icon name="notifications-circle-outline"></ion-icon>
             <ion-card-subtitle class="ion-text-capitalize">Add Expense</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
-      </ng-template>
-    </swiper>
+      </ion-col>
+    </ion-row>
+
+
 
     <ion-img src="/assets/images/svg.png"></ion-img>
   </div>
