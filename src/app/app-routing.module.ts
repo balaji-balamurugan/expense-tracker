@@ -56,14 +56,14 @@ const routes: Routes = [
   {
     path: 'modal-add-income',
     loadChildren: () =>
-      import('./pages/modal-add-income/modal-add-income.module').then(
+      import('./pages/income/modal-add-income/modal-add-income.module').then(
         (m) => m.ModalAddIncomePageModule
       ),
   },
   {
     path: 'modal-add-expense',
     loadChildren: () =>
-      import('./pages/modal-add-expense/modal-add-expense.module').then(
+      import('./pages/expense/modal-add-expense/modal-add-expense.module').then(
         (m) => m.ModalAddExpensePageModule
       ),
   },
@@ -80,19 +80,14 @@ const routes: Routes = [
   {
     path: 'add-goal',
     loadChildren: () =>
-      import('./pages/add-goal/add-goal.module').then(
+      import('./pages/goals/add-goal/add-goal.module').then(
         (m) => m.AddGoalPageModule
       ),
-  },  {
-    path: 'modal-date',
-    loadChildren: () => import('./pages/modal-date/modal-date.module').then( m => m.ModalDatePageModule)
   },
-
-
-  // {
-  //   path: 'test',
-  //   loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
-  // },
+  {
+    path: 'modal-date',
+    loadChildren: () => import('./pages/modal-date/modal-date.module').then(m => m.ModalDatePageModule)
+  },
 ];
 
 @NgModule({
@@ -101,4 +96,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

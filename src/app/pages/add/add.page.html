@@ -8,7 +8,6 @@
 </ion-header>
 
 <ion-content>
-
   <div class="wave">
     <swiper [slidesPerView]="2.5" [loop]="true">
       <ng-template swiperSlide>
@@ -34,12 +33,10 @@
           </ion-card-header>
         </ion-card>
       </ng-template>
-
     </swiper>
 
     <ion-img src="/assets/images/svg.png"></ion-img>
   </div>
-
 
   <ion-list>
     <ion-item lines="none">
@@ -54,7 +51,7 @@
     <ion-item *ngFor="let num of [].constructor(3);">
       <ion-icon name="fast-food-outline" slot="start"></ion-icon>
       <ion-label>
-        <h6>SAlary</h6>
+        <h6>Salary</h6>
         <p>20 Feb 2020</p>
       </ion-label>
       <ion-text slot="end">
@@ -62,6 +59,5 @@
         <p>Google Pay</p>
       </ion-text>
     </ion-item>
-
   </ion-list>
 </ion-content>
