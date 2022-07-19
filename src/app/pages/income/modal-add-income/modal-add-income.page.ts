@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { ModalDatePage } from '../../modal-date/modal-date.page';
 
@@ -8,9 +9,22 @@ import { ModalDatePage } from '../../modal-date/modal-date.page';
   styleUrls: ['./modal-add-income.page.scss'],
 })
 export class ModalAddIncomePage implements OnInit {
-  constructor(public modalController: ModalController) {}
+  incomeForm: FormGroup;
+  constructor(
+    public modalController: ModalController,
+    private fb: NonNullableFormBuilder
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.incomeForm = this.fb.group({
+      title: this.fb.control(''),
+      amount: this.fb.control(null),
+    });
+  }
+
+  income() {
+    console.log(this.incomeForm.value);
+  }
 
   dismiss() {
     this.modalController.dismiss({
