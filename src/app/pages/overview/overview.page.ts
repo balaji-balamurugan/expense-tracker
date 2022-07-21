@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { SwiperComponent } from 'swiper/angular';
-import SwiperCore, { Autoplay, Pagination } from 'swiper';
 
-SwiperCore.use([Pagination, Autoplay]);
+// SwiperCore.use([Pagination, Autoplay]);
 
 @Component({
   selector: 'app-overview',
