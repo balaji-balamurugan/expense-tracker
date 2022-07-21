@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modal-add-income</ion-title>
+    <ion-title>Add Income</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="dismiss()">
         <ion-icon slot="icon-only" name="close"></ion-icon>
@@ -12,6 +12,16 @@
 <ion-content color="light">
   <form [formGroup]="incomeForm">
     <ion-list class="add-income-list">
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Choose Date</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item class="date-picker ion-margin" lines="none">
+        <ion-datetime presentation="date"></ion-datetime>
+      </ion-item>
+
+
       <ion-item lines="none" color="light">
         <ion-label position="stacked">Income Title</ion-label>
         <ion-input type="text" formControlName="title"></ion-input>
