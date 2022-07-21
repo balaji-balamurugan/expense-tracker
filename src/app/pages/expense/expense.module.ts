@@ -9,12 +9,7 @@ import { ExpensePageRoutingModule } from './expense-routing.module';
 import { ExpensePage } from './expense.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    ExpensePageRoutingModule
-  ],
-  declarations: [ExpensePage]
+  imports: [CommonModule, FormsModule, IonicModule, ExpensePageRoutingModule],
+  declarations: [ExpensePage],
 })
 export class ExpensePageModule {}

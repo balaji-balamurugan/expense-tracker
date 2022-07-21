@@ -3,10 +3,62 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>expense</ion-title>
+    <ion-title>Total Expenses</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-list class="expense-list">
+    <ion-item class="date-picker" lines="none">
+      <ion-datetime presentation="date"></ion-datetime>
+    </ion-item>
 
+    <ion-card class="ion-padding-vertical ion-text-center">
+      <div class="total">
+        <ion-text>$1800</ion-text>
+      </div>
+      <ion-card-content>
+        You have Spend total 60% of you budget
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <ion-segment value="variations" scrollable="true" mode="md" [(ngModel)]="segmentModel">
+    <ion-segment-button value="spends">
+      <ion-label>Spends</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="categories">
+      <ion-label>Categories</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list class="expense-list" *ngIf="segmentModel === 'spends'">
+    <ion-item *ngFor="let num of [].constructor(3);">
+      <ion-icon name="fast-food-outline" slot="start" size="small"></ion-icon>
+      <ion-label>
+        <h6><b>Food</b></h6>
+        <p>20 Feb 2020</p>
+      </ion-label>
+      <ion-text class="ion-text-end" slot="end">
+        <p>
+          <ion-text color="dark">-$200 + Vat 1%</ion-text>
+        </p>
+        <small>
+          <ion-text color="medium">
+            Google Pay
+          </ion-text>
+        </small>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="expense-list" *ngIf="segmentModel === 'categories'">
+    <ion-list-header color="primary">
+      <ion-label></ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>1.Continue In App</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
