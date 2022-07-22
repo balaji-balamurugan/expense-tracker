@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -6,13 +7,14 @@ import { ModalController } from '@ionic/angular';
   templateUrl: './modal-date.page.html',
   styleUrls: ['./modal-date.page.scss'],
 })
-export class ModalDatePage implements OnInit {
-  constructor(public modalController: ModalController) {}
+export class ModalDatePage {
+  date = new FormControl<any>('');
 
-  ngOnInit() {}
+  constructor(public modalController: ModalController) { }
 
   dismiss() {
     this.modalController.dismiss({
+      data: this.date.value,
       dismissed: true,
     });
   }

@@ -10,11 +10,13 @@ import { ModalDatePage } from '../../modal-date/modal-date.page';
 })
 export class ModalAddExpensePage implements OnInit {
   expenseForm: FormGroup;
+  showDatePicker = false;
 
-  constructor(public modalController: ModalController) {}
+  constructor(public modalController: ModalController) { }
 
   ngOnInit() {
     this.expenseForm = new FormGroup({
+      date: new FormControl(''),
       title: new FormControl(''),
       amount: new FormControl(null),
     });
@@ -29,10 +31,15 @@ export class ModalAddExpensePage implements OnInit {
       dismissed: true,
     });
   }
+
   async date() {
     const modal = await this.modalController.create({
       component: ModalDatePage,
     });
-    return await modal.present();
+    await modal.present();
+    const { data } = await modal.onDidDismiss();
+    if (data) {
+      this.expenseForm.get('date').setValue(data?.data);
+    }
   }
 }

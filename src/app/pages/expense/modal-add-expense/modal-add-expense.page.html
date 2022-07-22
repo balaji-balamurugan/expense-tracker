@@ -14,11 +14,7 @@
     <ion-list class="add-expense-list">
       <ion-item lines="none" color="light">
         <ion-label position="stacked">Choose Date</ion-label>
-        <ion-input type="text"></ion-input>
-      </ion-item>
-
-      <ion-item class="date-picker ion-margin " lines="none">
-        <ion-datetime presentation="date"></ion-datetime>
+        <ion-input type="text" formControlName="date" (click)="date()"></ion-input>
       </ion-item>
 
       <ion-item lines="none" color="light">
@@ -41,12 +37,8 @@
           <ion-button slot="start" fill="outline" color="dark">
             <ion-icon name="add" slot="icon-only"></ion-icon>
           </ion-button>
-          <ion-button slot="start">
-            Health
-          </ion-button>
-          <ion-button slot="start">
-            Grocery
-          </ion-button>
+          <ion-button slot="start"> Health </ion-button>
+          <ion-button slot="start"> Grocery </ion-button>
         </div>
       </ion-item>
       <ion-item lines="none" color="light">
@@ -58,7 +50,6 @@
       </ion-item>
     </ion-list>
   </form>
-
 </ion-content>
 
 <ion-footer>
