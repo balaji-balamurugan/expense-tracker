@@ -4,9 +4,9 @@ import { ModalController } from '@ionic/angular';
 import { ModalDatePage } from '../../modal-date/modal-date.page';
 
 @Component({
-  selector: 'app-modal-add-expense',
-  templateUrl: './modal-add-expense.page.html',
-  styleUrls: ['./modal-add-expense.page.scss'],
+  selector: 'et-add-expense',
+  templateUrl: './add-expense.page.html',
+  styleUrls: ['./add-expense.page.scss'],
 })
 export class ModalAddExpensePage implements OnInit {
   expenseForm: FormGroup;

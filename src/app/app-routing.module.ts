@@ -63,7 +63,7 @@ const routes: Routes = [
   {
     path: 'modal-add-expense',
     loadChildren: () =>
-      import('./pages/expense/modal-add-expense/modal-add-expense.module').then(
+      import('./pages/expense/add-expense/add-expense.module').then(
         (m) => m.ModalAddExpensePageModule
       ),
   },

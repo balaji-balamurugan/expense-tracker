@@ -1,20 +1,24 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
-import { EntriesPageRoutingModule } from './entries-routing.module';
-
 import { EntriesPage } from './entries.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: EntriesPage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    EntriesPageRoutingModule
+    RouterModule.forChild(routes)
   ],
   declarations: [EntriesPage]
 })
-export class EntriesPageModule {}
+export class EntriesPageModule { }

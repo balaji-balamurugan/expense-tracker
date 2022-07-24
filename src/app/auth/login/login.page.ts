@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+    selector: 'et-login',
+    templateUrl: './login.page.html',
+    styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  ismyTextFieldType: boolean;
+    ismyTextFieldType: boolean;
 
-  constructor() {}
+    constructor() { }
 
-  ngOnInit() {}
+    ngOnInit() { }
 
-  togglePassword() {
-    this.ismyTextFieldType = !this.ismyTextFieldType;
-  }
+    togglePassword() {
+        this.ismyTextFieldType = !this.ismyTextFieldType;
+    }
 }
