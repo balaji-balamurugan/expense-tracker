@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { EntriesPage } from './entries.page';
+import { EntriesListPage } from './entries-list.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: EntriesPage
+    component: EntriesListPage
   }
 ];
 
@@ -19,6 +19,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [EntriesPage]
+  declarations: [EntriesListPage]
 })
-export class EntriesPageModule { }
+export class EntriesListPageModule { }

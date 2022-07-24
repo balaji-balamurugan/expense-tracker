@@ -1,9 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { ModalAddIncomePageRoutingModule } from './modal-add-income-routing.module';
-import { ModalAddIncomePage } from './modal-add-income.page';
+import { AddIncomePage } from './add-income.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: AddIncomePage
+  }
+];
 
 @NgModule({
   imports: [
@@ -11,8 +18,8 @@ import { ModalAddIncomePage } from './modal-add-income.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    ModalAddIncomePageRoutingModule,
+    RouterModule.forChild(routes)
   ],
-  declarations: [ModalAddIncomePage],
+  declarations: [AddIncomePage],
 })
-export class ModalAddIncomePageModule { }
+export class AddIncomePageModule { }

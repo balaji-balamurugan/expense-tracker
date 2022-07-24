@@ -3,14 +3,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { SwiperModule } from 'swiper/angular';
-import { OverviewPage } from './overview.page';
+import { GoalsPage } from './goals.page';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: OverviewPage
-  }
+    component: GoalsPage
+  },
+  {
+    path: 'add-goal',
+    loadChildren: () =>
+      import('./add-goal/add-goal.module').then((m) => m.AddGoalPageModule),
+  },
 ];
 
 @NgModule({
@@ -18,9 +23,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    SwiperModule,
+    RouterModule.forChild(routes)
   ],
-  declarations: [OverviewPage],
+  declarations: [GoalsPage]
 })
-export class OverviewPageModule { }
+export class GoalsPageModule { }

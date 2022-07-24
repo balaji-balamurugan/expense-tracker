@@ -1,13 +1,9 @@
-import { Component, ViewChild } from '@angular/core';
-import { SwiperComponent } from 'swiper/angular';
-
-// SwiperCore.use([Pagination, Autoplay]);
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'et-overview',
-    templateUrl: './overview.page.html',
-    styleUrls: ['./overview.page.scss'],
+  selector: 'et-overview',
+  templateUrl: './overview.page.html',
+  styleUrls: ['./overview.page.scss'],
 })
 export class OverviewPage {
-    @ViewChild('swiper') swiper: SwiperComponent;
 }

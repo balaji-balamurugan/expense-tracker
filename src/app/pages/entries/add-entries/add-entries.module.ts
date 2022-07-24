@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { AddPage } from './add.page';
+import { AddEntriesPage } from './add-entries.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AddPage
+    component: AddEntriesPage
   }
 ];
 
@@ -19,6 +19,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AddPage],
+  declarations: [AddEntriesPage],
 })
-export class AddPageModule { }
+export class AddEntriesPageModule { }

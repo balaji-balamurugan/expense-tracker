@@ -1,12 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-
-import { IncomePageRoutingModule } from './income-routing.module';
-
 import { IncomePage } from './income.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: IncomePage
+  }
+];
 
 @NgModule({
   imports: [
@@ -14,7 +18,7 @@ import { IncomePage } from './income.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    IncomePageRoutingModule
+    RouterModule.forChild(routes)
   ],
   declarations: [IncomePage]
 })

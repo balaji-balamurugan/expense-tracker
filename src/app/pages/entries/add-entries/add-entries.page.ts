@@ -2,16 +2,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import { SwiperComponent } from 'swiper/angular';
-import { ModalAddExpensePage } from '../expense/add-expense/add-expense.page';
-import { ModalAddIncomePage } from '../income/modal-add-income/modal-add-income.page';
+import { AddExpensePage } from '../../expense/add-expense/add-expense.page';
+import { AddIncomePage } from '../../income/add-income/add-income.page';
 SwiperCore.use([Pagination, Autoplay]);
 
 @Component({
-  selector: 'et-add',
-  templateUrl: './add.page.html',
-  styleUrls: ['./add.page.scss'],
+  selector: 'et-add-entries',
+  templateUrl: './add-entries.page.html',
+  styleUrls: ['./add-entries.page.scss'],
 })
-export class AddPage implements OnInit {
+export class AddEntriesPage implements OnInit {
   @ViewChild('swiper') swiper: SwiperComponent;
   constructor(public modalController: ModalController) { }
 
@@ -19,7 +19,7 @@ export class AddPage implements OnInit {
 
   async addIncome() {
     const modal = await this.modalController.create({
-      component: ModalAddIncomePage,
+      component: AddIncomePage,
     });
     return await modal.present();
 
@@ -27,7 +27,7 @@ export class AddPage implements OnInit {
 
   async addExpense() {
     const modal = await this.modalController.create({
-      component: ModalAddExpensePage,
+      component: AddExpensePage,
     });
     return await modal.present();
   }

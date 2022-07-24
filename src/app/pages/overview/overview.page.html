@@ -5,7 +5,7 @@
     </ion-buttons>
     <ion-title>Overview</ion-title>
     <ion-buttons slot="end">
-      <ion-button size="small" [routerLink]="['/add']">
+      <ion-button size="small" [routerLink]="['/add-entries']">
         <ion-icon name="add-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -58,9 +58,9 @@
     <ion-img src="/assets/images/svg.png"></ion-img>
   </div>
 
-  <swiper [slidesPerView]="3">
+  <swiper [slidesPerView]="2.5" [spaceBetween]="10">
     <ng-template swiperSlide>
-      <ion-card>
+      <ion-card [routerLink]="['/savings']">
         <ion-card-header class="ion-padding">
           <ion-icon name="add-circle-outline"></ion-icon>
           <ion-card-subtitle class="ion-text-capitalize">Savings</ion-card-subtitle>
@@ -68,18 +68,18 @@
       </ion-card>
     </ng-template>
     <ng-template swiperSlide>
-      <ion-card>
+      <ion-card [routerLink]="['/reminder']">
         <ion-card-header class="ion-padding">
           <ion-icon name="notifications-circle-outline"></ion-icon>
-          <ion-card-subtitle class="ion-text-capitalize">Reminders</ion-card-subtitle>
+          <ion-card-subtitle class="ion-text-capitalize">Reminder</ion-card-subtitle>
         </ion-card-header>
       </ion-card>
     </ng-template>
     <ng-template swiperSlide>
-      <ion-card>
+      <ion-card [routerLink]="['/goals']">
         <ion-card-header class="ion-padding">
           <ion-icon name="notifications-circle-outline"></ion-icon>
-          <ion-card-subtitle class="ion-text-capitalize">Reminders</ion-card-subtitle>
+          <ion-card-subtitle class="ion-text-capitalize">Goals</ion-card-subtitle>
         </ion-card-header>
       </ion-card>
     </ng-template>
@@ -90,7 +90,7 @@
       <ion-label>
         <b>Latest Entries</b>
       </ion-label>
-      <ion-button slot="end" size="small" [routerLink]="['/entries']">
+      <ion-button slot="end" size="small" [routerLink]="['/entries-list']">
         <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
       </ion-button>
     </ion-item>

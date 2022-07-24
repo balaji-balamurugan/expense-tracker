@@ -1,0 +1,49 @@
+{
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.autoIndent": "full",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.codeLens": false,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "line",
+  "editor.detectIndentation": false,
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": false,
+  "editor.linkedEditing": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderWhitespace": "none",
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "prettier.bracketSpacing": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "scss.validate": false,
+"diffEditor.codeLens": true,
+"conventionalCommits.scopes": [
+    "app",
+    "add expense form"
+]
+}

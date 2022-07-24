@@ -1,12 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
-import { ModalDatePageRoutingModule } from './modal-date-routing.module';
-
-import { ModalDatePage } from './modal-date.page';
+import { DatePickerComponent } from './date-picker.component';
 
 @NgModule({
   imports: [
@@ -14,8 +10,8 @@ import { ModalDatePage } from './modal-date.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    ModalDatePageRoutingModule
   ],
-  declarations: [ModalDatePage]
+  declarations: [DatePickerComponent],
+  exports: [DatePickerComponent]
 })
-export class ModalDatePageModule { }
+export class DatePickerPageModule { }
