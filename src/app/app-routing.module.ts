@@ -50,7 +50,11 @@ const routes: Routes = [
   {
     path: 'goals',
     loadChildren: () => import('./pages/goals/goals.module').then(m => m.GoalsPageModule)
+  },  {
+    path: 'test-date',
+    loadChildren: () => import('./test-date/test-date.module').then( m => m.TestDatePageModule)
   },
+
 
 ];
 
