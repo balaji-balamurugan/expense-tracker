@@ -29,7 +29,7 @@
       </ng-template>
 
       <ng-template swiperSlide>
-        <ion-card class="ion-text-start">
+        <ion-card class="ion-text-start" [routerLink]="['/expense']">
           <ion-card-header class="ion-padding">
             <ion-icon name="card-outline"></ion-icon>
             <ion-card-subtitle class="ion-text-capitalize">Total Expense</ion-card-subtitle>
@@ -95,16 +95,9 @@
       </ion-button>
     </ion-item>
 
-    <ion-item *ngFor="let num of [].constructor(3);">
-      <ion-icon name="fast-food-outline" slot="start"></ion-icon>
-      <ion-label>
-        <h6>Food</h6>
-        <p>20 Feb 2020</p>
-      </ion-label>
-      <ion-text slot="end">
-        <p>-$200 + Vat 1%</p>
-        <small>Google Pay</small>
-      </ion-text>
-    </ion-item>
+    <ng-container *ngFor="let num of [].constructor(5)">
+      <et-entries-view [name]="'vignesh'" [date]="'12/90/1990'" [paymentMethod]="'googlemaps'" [color]="'red'">
+      </et-entries-view>
+    </ng-container>
   </ion-list>
 </ion-content>

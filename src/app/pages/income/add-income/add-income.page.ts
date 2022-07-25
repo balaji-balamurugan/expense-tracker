@@ -14,6 +14,7 @@ export class AddIncomePage implements OnInit {
   dateValue: any;
   formattedString: any;
   incomeForm: FormGroup;
+
   constructor(
     public modalController: ModalController,
     // private fb: FormBuilder

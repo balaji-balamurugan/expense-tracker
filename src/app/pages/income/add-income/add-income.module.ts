@@ -1,16 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { AddIncomePage } from './add-income.page';
-
-const routes: Routes = [
-  {
-    path: '',
-    component: AddIncomePage
-  }
-];
 
 @NgModule({
   imports: [
@@ -18,7 +10,6 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
   ],
   declarations: [AddIncomePage],
 })
