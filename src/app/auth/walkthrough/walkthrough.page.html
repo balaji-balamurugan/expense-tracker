@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <swiper [autoplay]="true" [pagination]="true" [loop]="true">
+    <ng-template swiperSlide>
+      <ion-card>
+        <ion-card-header>
+          <ion-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSc2oCtU1N2NxFf40X1FawnG9KBaz54fQ7vw&usqp=CAU">
+          </ion-img>
+        </ion-card-header>
+        <ion-card-content class="ion-margin-top">
+          <ion-card-title class="ion-margin-bottom">Note Down Expenses</ion-card-title>
+          <p>Daily note your expenses to help manage money</p>
+        </ion-card-content>
+        <ion-item lines="none">
+          <ion-button fill="clear" slot="end" color="dark">Next</ion-button>
+        </ion-item>
+      </ion-card>
+
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-card>
+        <ion-card-header>
+          <ion-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSc2oCtU1N2NxFf40X1FawnG9KBaz54fQ7vw&usqp=CAU">
+          </ion-img>
+        </ion-card-header>
+        <ion-card-content class="ion-margin-top">
+          <ion-card-title class="ion-margin-bottom">Simple Money Management</ion-card-title>
+          <p>Get your notifications or alert when you do the over expenses</p>
+        </ion-card-content>
+        <ion-item lines="none">
+          <ion-button fill="clear" slot="end" color="dark">Next</ion-button>
+        </ion-item>
+      </ion-card>
+    </ng-template>
+    <ng-template swiperSlide>
+      <ion-card>
+        <ion-card-header>
+          <ion-img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSc2oCtU1N2NxFf40X1FawnG9KBaz54fQ7vw&usqp=CAU">
+          </ion-img>
+        </ion-card-header>
+        <ion-card-content class="ion-margin-top">
+          <ion-card-title class="ion-margin-bottom">Easy to Track and Analize</ion-card-title>
+          <p>Tracking your expense help make sure you don't overspend</p>
+        </ion-card-content>
+
+        <!-- <ion-item lines="none"> -->
+        <ion-button expand="block" [routerLink]="['/auth/login']">Get Started </ion-button>
+        <!-- </ion-item> -->
+      </ion-card>
+    </ng-template>
+  </swiper>
+</ion-content>

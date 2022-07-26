@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Entries</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="entries-list">
+    <ion-list-header>
+      <ion-label><b>Latest Entries</b></ion-label>
+    </ion-list-header>
+
+    <ng-container *ngFor="let num of [].constructor(10);">
+      <et-entries-view [name]="'lakshmi'" [date]="'12/08/1990'" [paymentMethod]="'googlemaps'"></et-entries-view>
+    </ng-container>
+  </ion-list>
+</ion-content>

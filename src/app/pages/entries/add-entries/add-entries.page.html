@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Overview</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="wave">
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-text-center">
+          <ion-card-header class="ion-padding">
+            <ion-icon name="notifications-circle-outline"></ion-icon>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="ion-text-center" (click)="addIncome()">
+          <ion-card-header class="ion-padding">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <ion-card-subtitle class="ion-text-capitalize">Add Income</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card class="ion-text-center" (click)="addExpense()">
+          <ion-card-header class="ion-padding">
+            <ion-icon name="notifications-circle-outline"></ion-icon>
+            <ion-card-subtitle class="ion-text-capitalize">Add Expense</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-img src="/assets/images/svg.png"></ion-img>
+  </div>
+
+  <ion-list>
+    <ion-item lines="none">
+      <ion-label>
+        <b>Latest Entries</b>
+      </ion-label>
+      <ion-button slot="end" size="small" [routerLink]="['/entries-list']">
+        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-item *ngFor="let num of [].constructor(3);">
+      <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+      <ion-label>
+        <h6>Salary</h6>
+        <p>20 Feb 2020</p>
+      </ion-label>
+      <ion-text slot="end">
+        <h6>-$200 + Vat 1%</h6>
+        <p>Google Pay</p>
+      </ion-text>
+    </ion-item>
+  </ion-list>
+</ion-content>

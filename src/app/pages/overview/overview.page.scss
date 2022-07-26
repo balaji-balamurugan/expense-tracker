@@ -1,0 +1,17 @@
+.wave {
+  position: relative;
+  background: var(--ion-color-light);
+  // &::before {
+  //   position: absolute;
+  //   content: url('/assets/images/svg2.png');
+  //   width: 100%;
+  //   height: 100px;
+  // }
+}
+
+
+.overview-swiper-wrapper {
+  ion-card {
+    min-height: 180px !important;
+  }
+}
