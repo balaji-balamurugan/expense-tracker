@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
-import { AuthPageRoutingModule } from './auth-routing.module';
 import { AuthPage } from './auth.page';
+
+const routes: Routes = [
+  { path: '', pathMatch: 'full', redirectTo: 'login' },
+  {
+    path: 'walkthrough',
+    loadChildren: () => import('./walkthrough/walkthrough.module').then((m) => m.WalkthroughPageModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then((m) => m.LoginPageModule),
+  },
+];
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
     IonicModule,
-    AuthPageRoutingModule
+    RouterModule.forChild(routes)
   ],
   declarations: [AuthPage]
 })
-export class AuthPageModule {}
+export class AuthPageModule { }

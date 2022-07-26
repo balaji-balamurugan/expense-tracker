@@ -1,15 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    selector: 'et-auth',
-    templateUrl: './auth.page.html',
-    styleUrls: ['./auth.page.scss'],
+  template: `
+    <ion-router-outlet></ion-router-outlet>
+  `,
+  styleUrls: [],
 })
-export class AuthPage implements OnInit {
-
-    constructor() { }
-
-    ngOnInit() {
-    }
-
+export class AuthPage {
 }

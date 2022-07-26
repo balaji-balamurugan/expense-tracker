@@ -12,7 +12,7 @@ import { AddIncomePage } from '../../income/add-income/add-income.page';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddEntriesPage {
-  @ViewChild('swiper') swiper: SwiperComponent;
+  @ViewChild('swiper') swiper!: SwiperComponent;
 
   constructor(public modalController: ModalController) { }
 

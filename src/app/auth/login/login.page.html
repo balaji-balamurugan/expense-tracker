@@ -10,7 +10,6 @@
 <ion-content color="light">
   <ion-grid class="main-grid">
     <ion-list class="login-list ion-margin">
-
       <ion-list-header class="ion-text-center ion-margin-bottom ion-padding-bottom">
         <ion-label>Expense</ion-label>
       </ion-list-header>
@@ -40,7 +39,7 @@
           <div class="number-block">
             <ion-input placeholder="Password" type="number" [type]="ismyTextFieldType ? 'text' : 'password'">
             </ion-input>
-            <ion-button class="ion-no-margin" slot="end" color="white" (click)="togglePassword()">
+            <ion-button class="ion-no-margin" slot="end" color="white" (click)="ismyTextFieldType = !ismyTextFieldType">
               <ion-icon slot="end" color="medium" size="small" [name]="ismyTextFieldType ? 'eye-off' : 'eye'">
               </ion-icon>
             </ion-button>
@@ -48,13 +47,10 @@
         </ion-item>
 
         <br />
-        <ion-button class="ion-margin-top" expand="block" [routerLink]="['/overview']">
-          Sign In
-        </ion-button>
+        <ion-button class="ion-margin-top" expand="block" [routerLink]="['/overview']"> Sign In </ion-button>
         <ion-button class="ion-margin-top" color="medium" fill="clear" expand="block">Forgot your password?</ion-button>
       </form>
     </ion-list>
-
   </ion-grid>
 </ion-content>
 <ion-footer>

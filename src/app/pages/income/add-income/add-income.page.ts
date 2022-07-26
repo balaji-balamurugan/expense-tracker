@@ -10,10 +10,10 @@ import { DatePickerComponent } from 'src/app/shared/components/date-picker/date-
   styleUrls: ['./add-income.page.scss'],
 })
 export class AddIncomePage implements OnInit {
-  @ViewChild(IonDatetime) datetime: IonDatetime;
+  @ViewChild(IonDatetime) datetime!: IonDatetime;
   dateValue: any;
   formattedString: any;
-  incomeForm: FormGroup;
+  incomeForm!: FormGroup;
 
   constructor(
     public modalController: ModalController,
@@ -44,7 +44,7 @@ export class AddIncomePage implements OnInit {
     return await modal.present();
   }
 
-  modalDateChanged(value) {
+  modalDateChanged(value: any) {
     this.dateValue = value;
     this.formattedString = format(parseISO(value), 'HH:mm, MMM d, yyyy');
   }

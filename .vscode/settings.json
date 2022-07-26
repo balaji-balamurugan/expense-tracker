@@ -38,12 +38,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
   "scss.validate": false,
-"diffEditor.codeLens": true,
-"conventionalCommits.scopes": [
-    "app",
-    "add expense form"
-]
+  "diffEditor.codeLens": true,
+  "conventionalCommits.scopes": ["app", "add expense form"]
 }

@@ -9,7 +9,7 @@ import { DatePickerComponent } from 'src/app/shared/components/date-picker/date-
   styleUrls: ['./add-expense.page.scss'],
 })
 export class AddExpensePage implements OnInit {
-  expenseForm: FormGroup;
+  expenseForm!: FormGroup;
   showDatePicker = false;
 
   constructor(public modalController: ModalController) { }
@@ -38,9 +38,8 @@ export class AddExpensePage implements OnInit {
     });
     await modal.present();
     const { data } = await modal.onDidDismiss();
-    console.log(data);
     if (data) {
-      this.expenseForm.get('date').setValue(data?.data);
+      // this.expenseForm.get('date').setValue(data?.data);
     }
   }
 }

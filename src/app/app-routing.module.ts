@@ -12,12 +12,12 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'expense',
-    loadChildren: () => import('./pages/expense/expense.module').then((m) => m.ExpensePageModule),
-  },
-  {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthPageModule),
+  },
+  {
+    path: 'expense',
+    loadChildren: () => import('./pages/expense/expense.module').then((m) => m.ExpensePageModule),
   },
   {
     path: 'savings',
@@ -36,10 +36,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/overview/overview.module').then((m) => m.OverviewPageModule),
   },
   {
-    path: 'ui-test-page',
-    loadChildren: () => import('./ui-test-page/ui-test-page.module').then((m) => m.UiTestPagePageModule),
-  },
-  {
     path: 'entries-list',
     loadChildren: () => import('./pages/entries/entries-list/entries-list.module').then((m) => m.EntriesListPageModule),
   },
@@ -49,13 +45,8 @@ const routes: Routes = [
   },
   {
     path: 'goals',
-    loadChildren: () => import('./pages/goals/goals.module').then(m => m.GoalsPageModule)
-  },  {
-    path: 'test-date',
-    loadChildren: () => import('./test-date/test-date.module').then( m => m.TestDatePageModule)
+    loadChildren: () => import('./pages/goals/goals.module').then((m) => m.GoalsPageModule),
   },
-
-
 ];
 
 @NgModule({

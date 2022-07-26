@@ -6,7 +6,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     <ion-item>
       <ion-icon name="fast-food-outline" slot="start" size="small"></ion-icon>
       <ion-label>
-        <h6 [ngStyle]="{ 'color': color}">
+        <h6 [ngStyle]="{'color': color}">
           <b>{{name}}</b>
         </h6>
         <p>{{date}}</p>
@@ -27,15 +27,15 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class EntriesViewComponent {
 
   @Input()
-  name: string;
+  name!: string;
 
   @Input()
   color: string = 'red' || 'blue';
 
   @Input()
-  date: string;
+  date!: string;
 
   @Input()
-  paymentMethod: string;
+  paymentMethod!: string;
 }
 
