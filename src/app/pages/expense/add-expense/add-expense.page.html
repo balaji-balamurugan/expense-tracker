@@ -12,9 +12,10 @@
 <ion-content color="light">
   <form [formGroup]="expenseForm">
     <ion-list class="add-expense-list">
-      <ion-item lines="none" color="light">
+      <ion-item lines="none" color="light" id="open-date-modal">
         <ion-label position="stacked">Choose Date</ion-label>
-        <ion-input type="text" formControlName="date" (click)="date()"></ion-input>
+        <!-- <ion-input type="text" formControlName="date" (click)="date()"></ion-input> -->
+        <ion-input type="text" placeholder="Set date" formControlName="date" [value]="formattedString"></ion-input>
       </ion-item>
 
       <ion-item lines="none" color="light">
@@ -30,9 +31,9 @@
             <ion-icon slot="end" name="add"></ion-icon>
           </div> -->
       </ion-item>
+
       <ion-item lines="none" color="light">
         <ion-label position="stacked">Expense Category</ion-label>
-
         <div>
           <ion-button slot="start" fill="outline" color="dark">
             <ion-icon name="add" slot="icon-only"></ion-icon>
@@ -50,6 +51,20 @@
       </ion-item>
     </ion-list>
   </form>
+
+  <ion-modal trigger="open-date-modal">
+    <ion-content scrollY="false">
+      <ion-datetime presentation="date" size="cover" #datetimemodal [value]="dateValue"
+        (ionChange)="modalDateChanged(datetimemodal.value)">
+        <span slot="title">Select a Date</span>
+      </ion-datetime>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button expand="block" (click)="dismiss()">Set Date {{ formattedString }}</ion-button>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-modal>
 </ion-content>
 
 <ion-footer>
