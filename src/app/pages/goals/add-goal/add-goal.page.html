@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Goal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list class="add-goal-list">
+    <ion-item lines="none" color="light">
+      <ion-label position="stacked">Goal Title</ion-label>
+      <ion-input type="text" value="New Car"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none" color="light">
+      <ion-label position="stacked">Amount</ion-label>
+      <ion-input type="text" value="4000"></ion-input>
+      <!-- <div class="date-block ion-text-end">
+        <ion-input type="text"></ion-input>
+        <ion-icon slot="end" name="add"></ion-icon>
+      </div> -->
+    </ion-item>
+
+    <ion-item lines="none" color="light">
+      <ion-label position="stacked">Contribution Type</ion-label>
+      <ion-select value="1" interface="action-sheet">
+        <ion-select-option value="1">Yearly </ion-select-option>
+        <ion-select-option value="2">Monthly </ion-select-option>
+        <ion-select-option value="3">Weekly </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item lines="none" color="light">
+      <ion-label position="stacked">Start Date</ion-label>
+      <div class="date-block ion-text-end ">
+        <ion-text class="ion-padding-start">13/12/2021</ion-text>
+        <ion-icon slot="end" name="calendar" (click)="date()"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block">Add Goal</ion-button>
+  </ion-toolbar>
+</ion-footer>
