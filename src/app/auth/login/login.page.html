@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-grid class="main-grid">
+    <ion-list class="login-list ion-margin">
+      <ion-list-header class="ion-text-center ion-margin-bottom ion-padding-bottom">
+        <ion-label>Expense</ion-label>
+      </ion-list-header>
+
+      <div class="social-login-button">
+        <ion-button class="ion-margin-bottom" color="white" expand="block">
+          <ion-img src="/assets/images/search.svg"></ion-img>
+          <span class="social-name">Login with Gmail</span>
+        </ion-button>
+
+        <ion-button color="dark" expand="block">
+          <ion-img src="/assets/images/apple.png"></ion-img>
+          <span class="social-name ion-margin-starts">Signin with Apple</span>
+        </ion-button>
+      </div>
+
+      <p class="sub-line ion-text-center ion-margin-vertical">OR</p>
+
+      <form class="social-login-wrapper ion-margin-top">
+        <ion-item class="ion-margin-bottom" color="light" lines="none" mode="ios">
+          <ion-label color="medium" position="stacked">Email</ion-label>
+          <ion-input placeholder="Your email or phone" type="email"></ion-input>
+        </ion-item>
+
+        <ion-item color="light" lines="none" mode="ios">
+          <ion-label color="medium" position="stacked">Password</ion-label>
+          <div class="number-block">
+            <ion-input placeholder="Password" type="number" [type]="ismyTextFieldType ? 'text' : 'password'">
+            </ion-input>
+            <ion-button class="ion-no-margin" slot="end" color="white" (click)="ismyTextFieldType = !ismyTextFieldType">
+              <ion-icon slot="end" color="medium" size="small" [name]="ismyTextFieldType ? 'eye-off' : 'eye'">
+              </ion-icon>
+            </ion-button>
+          </div>
+        </ion-item>
+
+        <br />
+        <ion-button class="ion-margin-top" expand="block" [routerLink]="['/overview']"> Sign In </ion-button>
+        <ion-button class="ion-margin-top" color="medium" fill="clear" expand="block">Forgot your password?</ion-button>
+      </form>
+    </ion-list>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar class="ion-text-center">
+    <ion-note color="medium">
+      Don't have an account? <ion-text class="pointer" color="dark">Sign up</ion-text>
+    </ion-note>
+  </ion-toolbar>
+</ion-footer>

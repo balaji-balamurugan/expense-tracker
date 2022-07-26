@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Income</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <form [formGroup]="incomeForm">
+    <ion-list class="add-income-list">
+      <!-- <ion-item id="open-modal">
+        <ion-label>Pick date </ion-label>
+        <ion-input placeholder="select" [value]="formattedString" slot="end"> {{ formattedString }} </ion-input>
+      </ion-item> -->
+
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Choose Date</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item class="date-picker ion-margin" lines="none">
+        <ion-datetime presentation="date"></ion-datetime>
+      </ion-item>
+
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Income Title</ion-label>
+        <ion-input type="text" formControlName="title"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Amount</ion-label>
+        <ion-input type="text" formControlName="amount" value=""></ion-input>
+      </ion-item>
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Income Category</ion-label>
+
+        <div>
+          <ion-button slot="start" fill="outline" color="dark">
+            <ion-icon name="add" slot="icon-only"></ion-icon>
+          </ion-button>
+          <ion-button slot="start">Salary</ion-button>
+          <ion-button slot="start">Rewards</ion-button>
+        </div>
+      </ion-item>
+    </ion-list>
+  </form>
+
+  <!-- <ion-modal trigger="open-modal">
+    <ion-content scrollY="false">
+      <ion-datetime #datetimemodal [value]="dateValue" size="cover" (ionChange)="modalDateChanged(datetimemodal.value)">
+        <ion-buttons slot="buttons">
+          <ion-button (click)="select()" color="primary">Select</ion-button>
+        </ion-buttons>
+      </ion-datetime>
+    </ion-content>
+  </ion-modal> -->
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" (click)="income()">Add Income</ion-button>
+  </ion-toolbar>
+</ion-footer>

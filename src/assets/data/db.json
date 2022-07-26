@@ -1,0 +1,25 @@
+{
+  "latestEntries" : [
+    {
+      "name": "Food",
+      "date": "20 Feb 2020",
+      "amount" : "-$200",
+      "percent": "Vat 1%",
+      "paymentType": "Google Pay"
+    },
+        {
+      "name": "Uber",
+      "date": "26 Feb 2020",
+      "amount" : "-$18",
+      "percent": "Vat 0.8%",
+      "paymentType": "Cash"
+    },
+        {
+      "name": "Shopping",
+      "date": "13 Mar 2020",
+      "amount" : "-$400",
+      "percent": "Vat 12%",
+      "paymentType": "Paytm"
+    }
+  ]
+}
