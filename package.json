@@ -28,6 +28,8 @@
     "@capacitor/keyboard": "1.2.3",
     "@capacitor/status-bar": "1.0.8",
     "@ionic/angular": "^6.1.9",
+    "@ngrx/component": "^14.0.2",
+    "@ngrx/component-store": "^14.0.2",
     "cordova-plugin-sms": "^1.0.5",
     "date-fns": "^2.29.1",
     "rxjs": "~6.6.0",
