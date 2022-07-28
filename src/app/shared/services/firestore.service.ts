@@ -3,7 +3,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Action, AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentChangeAction, DocumentReference, DocumentSnapshot, QueryFn } from '@angular/fire/compat/firestore';
-import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/storage';
 import { FirebaseError } from 'firebase/app';
 import firebase from 'firebase/compat/app';
 import { Observable, of } from 'rxjs';
@@ -20,7 +19,6 @@ export class FirestoreService {
   constructor(
     public afs: AngularFirestore,
     private _fbAuth: AngularFireAuth,
-    private afStorage: AngularFireStorage,
   ) {
     this._fbAuth.authState
       .subscribe((authState) => {
@@ -143,42 +141,6 @@ export class FirestoreService {
   async delete<T>(ref: string): Promise<void> {
     return await this.doc<T>(ref).delete();
   }
-
-  async uploadFileToStorage(path: string, file: File): Promise<AngularFireUploadTask> {
-    return await this.afStorage.upload(`resImg/${this.tenantID}/${path}`, file);
-  }
-
-  deleteFileStorage(path: string): Observable<void> {
-    return this.afStorage.ref(`resImg/${this.tenantID}/${path}`).delete();
-  }
-
-  async getFileURLFromUpload<T>(imagePath: string, fileData: File): Promise<{ imgUrl: string; imgPath: string } | unknown> {
-    const imgUploadTask = await this.uploadFileToStorage(imagePath, fileData);
-    if (imgUploadTask) {
-      const imageDownloadURL = await imgUploadTask.ref.getDownloadURL();
-      if (imageDownloadURL) {
-        return {
-          imgUrl: imageDownloadURL,
-          imgPath: imagePath
-        } as unknown as T;
-      }
-    }
-  }
-
-  async getMultiImgUrl(imagePath: string, fileData: File, imgID: string): Promise<any> {
-    const imgUploadTask = await this.uploadFileToStorage(imagePath, fileData);
-    if (imgUploadTask) {
-      const imageDownloadURL = await imgUploadTask.ref.getDownloadURL();
-      if (imageDownloadURL) {
-        return {
-          imgUrl: imageDownloadURL,
-          imgPath: imagePath,
-          imgID
-        };
-      }
-    }
-  }
-
 
   // -----------------------------------------------------------------------------------------------------
   //  *** Utility Functions ***
