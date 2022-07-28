@@ -6,6 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start-with-emulators": "firebase emulators:start 'ionic serve'",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -15,6 +16,7 @@
   "dependencies": {
     "@angular/common": "^14.1.0",
     "@angular/core": "^14.1.0",
+    "@angular/fire": "^7.4.1",
     "@angular/forms": "^14.1.0",
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
@@ -28,7 +30,6 @@
     "@ionic/angular": "^6.1.9",
     "cordova-plugin-sms": "^1.0.5",
     "date-fns": "^2.29.1",
-    "ngx-charts": "^3.0.2",
     "rxjs": "~6.6.0",
     "swiper": "^8.3.1",
     "tslib": "^2.2.0",

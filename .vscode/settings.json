@@ -42,5 +42,9 @@
   },
   "scss.validate": false,
   "diffEditor.codeLens": true,
-  "conventionalCommits.scopes": ["app", "add expense form"]
+  "conventionalCommits.scopes": [
+    "app",
+    "add expense form",
+    "firebase"
+  ]
 }

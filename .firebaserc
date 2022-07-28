@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "expense-tracker-app-bf2ba": {
+      "hosting": {
+        "app": [
+          "expense-tracker-app-bf2ba"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "expense-tracker-app-bf2ba"
+  }
+}
