@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-with-emulators": "firebase emulators:start 'ionic serve'",
+    "start-em": "firebase emulators:start",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

@@ -28,31 +28,40 @@
 
       <p class="sub-line ion-text-center ion-margin-vertical">OR</p>
 
-      <form class="social-login-wrapper ion-margin-top">
-        <ion-item class="ion-margin-bottom" color="light" lines="none" mode="ios">
-          <ion-label color="medium" position="stacked">Email</ion-label>
-          <ion-input placeholder="Your email or phone" type="email"></ion-input>
-        </ion-item>
+      <div class="social-login-wrapper ion-margin-top">
+        <ng-container [formGroup]="loginForm">
+          <ion-item class="ion-margin-bottom" color="light" lines="none" mode="ios">
+            <ion-label color="medium" position="stacked">Email</ion-label>
+            <ion-input placeholder="Your email or phone" type="email" formControlName="email"></ion-input>
+          </ion-item>
 
-        <ion-item color="light" lines="none" mode="ios">
-          <ion-label color="medium" position="stacked">Password</ion-label>
-          <div class="number-block">
-            <ion-input placeholder="Password" type="number" [type]="ismyTextFieldType ? 'text' : 'password'">
-            </ion-input>
-            <ion-button class="ion-no-margin" slot="end" color="white" (click)="ismyTextFieldType = !ismyTextFieldType">
-              <ion-icon slot="end" color="medium" size="small" [name]="ismyTextFieldType ? 'eye-off' : 'eye'">
-              </ion-icon>
-            </ion-button>
-          </div>
-        </ion-item>
+          <ion-item color="light" lines="none" mode="ios">
+            <ion-label color="medium" position="stacked">Password</ion-label>
+            <div class="number-block">
+              <ion-input placeholder="Password" type="number" [type]="ismyTextFieldType ? 'text' : 'password'"
+                formControlName="password">
+              </ion-input>
+              <ion-button class="ion-no-margin" slot="end" color="white"
+                (click)="ismyTextFieldType = !ismyTextFieldType">
+                <ion-icon slot="end" color="medium" size="small" [name]="ismyTextFieldType ? 'eye-off' : 'eye'">
+                </ion-icon>
+              </ion-button>
+            </div>
+          </ion-item>
+        </ng-container>
 
         <br />
-        <ion-button class="ion-margin-top" expand="block" [routerLink]="['/overview']"> Sign In </ion-button>
-        <ion-button class="ion-margin-top" color="medium" fill="clear" expand="block">Forgot your password?</ion-button>
-      </form>
+        <ion-button class="ion-margin-top" expand="block" (click)="signIn()" type="button">
+          Sign In
+        </ion-button>
+        <ion-button class="ion-margin-top" color="medium" fill="clear" expand="block" type="button">
+          Forgot your password?
+        </ion-button>
+      </div>
     </ion-list>
   </ion-grid>
 </ion-content>
+
 <ion-footer>
   <ion-toolbar class="ion-text-center">
     <ion-note color="medium">
