@@ -35,30 +35,6 @@ ion-header ion-toolbar {
     font-size: 12px;
     color: var(--ion-color-medium);
     text-align: center;
-
-    &::after {
-      position: absolute;
-      content: "";
-      right: 0;
-      width: 20%;
-      height: 1px;
-      background: #e7e7e7;
-      bottom: 0;
-      margin: auto;
-      top: 0;
-    }
-
-    &::before {
-      position: absolute;
-      content: "";
-      left: 0;
-      width: 20%;
-      height: 1px;
-      background: #e7e7e7;
-      bottom: 0;
-      margin: auto;
-      top: 0;
-    }
   }
 
   .social-login-wrapper {
@@ -83,6 +59,7 @@ ion-header ion-toolbar {
       justify-content: space-evenly;
       width: 100%;
       background: var(--ion-color-white);
+      padding-right: 10px;
 
       ion-button {
         --border-radius: 0;

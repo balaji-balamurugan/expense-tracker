@@ -21,5 +21,19 @@
       "percent": "Vat 12%",
       "paymentType": "Paytm"
     }
+  ],
+  "categories": [
+    {
+      "icon": "add-circle-outline",
+      "name": "Savings"
+    },
+    {
+      "icon": "notifications-circle-outline",
+      "name": "Reminder"
+    },
+    {
+      "icon": "notifications-circle-outline",
+      "name": "Goals"
+    }
   ]
 }

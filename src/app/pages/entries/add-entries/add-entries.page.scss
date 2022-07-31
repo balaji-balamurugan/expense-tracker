@@ -9,9 +9,14 @@
   // }
 }
 
-
 .overview-swiper-wrapper {
   ion-card {
     min-height: 180px !important;
+  }
+}
+
+.latest-entries-list {
+  ion-button {
+    --background: rgba(var(--ion-color-secondary-rgb, 0, 0, 0), 0.5);
   }
 }

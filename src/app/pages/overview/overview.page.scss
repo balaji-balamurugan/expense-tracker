@@ -12,6 +12,47 @@
 
 .overview-swiper-wrapper {
   ion-card {
-    min-height: 180px !important;
+    min-height: 145px !important;
+    box-shadow: none;
+    border-radius: 10px;
+
+    ion-card-subtitle {
+      font-size: 12px;
+    }
+
+    ion-card-content {
+      color: var(--ion-color-dark);
+    }
+  }
+
+  .select {
+    background: var(--ion-color-secondary);
+
+    ion-icon,
+    ion-card-subtitle,
+    ion-card-content {
+      color: var(--ion-color-white);
+    }
+
+  }
+}
+
+.overview-category-wrapper {
+  ion-card {
+    border-radius: 10px;
+
+    ion-card-subtitle {
+      font-size: 12px;
+    }
+
+    ion-card-content {
+      color: var(--ion-color-dark);
+    }
+  }
+}
+
+.latest-entries-list {
+  ion-button {
+    --background: rgba(var(--ion-color-primary-rgb, 0, 0, 0), 0.5);
   }
 }

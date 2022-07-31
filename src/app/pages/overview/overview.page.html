@@ -4,24 +4,19 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Overview</ion-title>
-    <ion-buttons slot="end">
-      <ion-button size="small" [routerLink]="['/add-entries']">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="wave">
-    <swiper class="overview-swiper-wrapper" [spaceBetween]="0" [slidesPerView]="2.5">
+    <swiper class="overview-swiper-wrapper" [spaceBetween]="0" [slidesPerView]="2.8">
       <ng-template swiperSlide>
-        <ion-card class="ion-text-start">
+        <ion-card class="ion-text-start ion-no-margin ion-margin-top select">
           <ion-card-header class="ion-padding">
             <ion-icon name="card-outline"></ion-icon>
-            <ion-card-subtitle class="ion-text-capitalize">Total Salary</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-capitalize ion-no-margin" color="medium">Total Salary</ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content class="ion-padding-horizontal ion-padding-bottom">
+          <ion-card-content class="ion-padding">
             <h6 color="dark"><b>$</b></h6>
             <p color="dark"><b>1800.00</b></p>
           </ion-card-content>
@@ -29,12 +24,13 @@
       </ng-template>
 
       <ng-template swiperSlide>
-        <ion-card class="ion-text-start" [routerLink]="['/expense']">
+        <ion-card class="ion-text-start ion-no-margin ion-margin-top" [routerLink]="['/expense']">
           <ion-card-header class="ion-padding">
             <ion-icon name="card-outline"></ion-icon>
-            <ion-card-subtitle class="ion-text-capitalize">Total Expense</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-capitalize ion-no-margin" color="medium">Total Expense
+            </ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content class="ion-padding-horizontal ion-padding-bottom">
+          <ion-card-content class="ion-padding">
             <h6 color="dark"><b>$</b></h6>
             <p color="dark"><b>1800.00</b></p>
           </ion-card-content>
@@ -42,12 +38,13 @@
       </ng-template>
 
       <ng-template swiperSlide>
-        <ion-card class="ion-text-start">
+        <ion-card class="ion-text-start ion-no-margin ion-margin-top">
           <ion-card-header class="ion-padding">
             <ion-icon name="card-outline"></ion-icon>
-            <ion-card-subtitle class="ion-text-capitalize">Monthly Expense</ion-card-subtitle>
+            <ion-card-subtitle class="ion-text-capitalize ion-no-margin" color="medium">Monthly Expense
+            </ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content class="ion-padding-horizontal ion-padding-bottom">
+          <ion-card-content class="ion-padding">
             <h6 color="dark"><b>$</b></h6>
             <p color="dark"><b>1800.00</b></p>
           </ion-card-content>
@@ -58,9 +55,17 @@
     <ion-img src="/assets/images/svg.png"></ion-img>
   </div>
 
-  <swiper [slidesPerView]="2.5" [spaceBetween]="10">
+  <swiper class="overview-category-wrapper" [slidesPerView]="2.5" [spaceBetween]="10">
     <ng-template swiperSlide>
-      <ion-card [routerLink]="['/savings']">
+      <!-- ---loop error-------- -->
+      <!-- <ion-card class="ion-no-maargin" [routerLink]="['/savings']" *ngFor="let category of categories">
+        <ion-card-header class="ion-padding">
+          <ion-icon [name]="category.icon"></ion-icon>
+          <ion-card-subtitle class="ion-text-capitalize">{{category.name}}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card> -->
+
+      <ion-card class="ion-no-maargin" [routerLink]="['/savings']">
         <ion-card-header class="ion-padding">
           <ion-icon name="add-circle-outline"></ion-icon>
           <ion-card-subtitle class="ion-text-capitalize">Savings</ion-card-subtitle>
@@ -68,7 +73,7 @@
       </ion-card>
     </ng-template>
     <ng-template swiperSlide>
-      <ion-card [routerLink]="['/reminder']">
+      <ion-card class="ion-no-maargin" [routerLink]="['/reminder']">
         <ion-card-header class="ion-padding">
           <ion-icon name="notifications-circle-outline"></ion-icon>
           <ion-card-subtitle class="ion-text-capitalize">Reminder</ion-card-subtitle>
@@ -76,7 +81,7 @@
       </ion-card>
     </ng-template>
     <ng-template swiperSlide>
-      <ion-card [routerLink]="['/goals']">
+      <ion-card class="ion-no-maargin" [routerLink]="['/goals']">
         <ion-card-header class="ion-padding">
           <ion-icon name="notifications-circle-outline"></ion-icon>
           <ion-card-subtitle class="ion-text-capitalize">Goals</ion-card-subtitle>
@@ -85,7 +90,7 @@
     </ng-template>
   </swiper>
 
-  <ion-list>
+  <ion-list class="latest-entries-list">
     <ion-item lines="none">
       <ion-label>
         <b>Latest Entries</b>
@@ -96,8 +101,14 @@
     </ion-item>
 
     <ng-container *ngFor="let num of [].constructor(5)">
-      <et-entries-view [name]="'vignesh'" [date]="'12/90/1990'" [paymentMethod]="'googlemaps'" [color]="'red'">
+      <et-entries-view [name]="'Food'" [date]="'12/90/1990'" [paymentMethod]="'Google Pay'">
       </et-entries-view>
     </ng-container>
   </ion-list>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed" size="small" edge [routerLink]="['/add-entries']">
+    <ion-fab-button size="small">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

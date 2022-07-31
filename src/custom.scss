@@ -20,3 +20,9 @@
 ion-item {
   --border-color: var(--ion-color-light);
 }
+
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  width: 25%;
+}
