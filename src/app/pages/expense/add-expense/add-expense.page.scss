@@ -28,6 +28,19 @@
       --padding-start: 16px;
       border-radius: 5px;
     }
+
+    .income-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      background: var(--ion-color-white);
+    }
+
+    .photo-btn {
+      width: 100%;
+    }
   }
 
   .date-picker {
