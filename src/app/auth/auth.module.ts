@@ -17,12 +17,40 @@ const routes: Routes = [
   },
   {
     path: 'login',
+    canActivate: [AngularFireAuthGuard],
+    data: {
+      authGuardPipe: redirectLoggedInToOverview
+    },
     loadChildren: () => import('./pages/login/login.module').then((m) => m.LoginPageModule),
   },
   {
     path: 'logout',
     loadChildren: () => import('./pages/Logout/Logout.module').then((m) => m.LogoutPageModule),
   },
+  {
+    path: 'forgot-password', canActivate: [AngularFireAuthGuard],
+    data: {
+      authGuardPipe: redirectLoggedInToOverview
+    },
+    loadChildren: () => import('./pages/forgot-password/forgot-password.module').then(m => m.ForgotPasswordPageModule)
+  },
+  {
+    path: 'sign-up',
+    canActivate: [AngularFireAuthGuard],
+    data: {
+      authGuardPipe: redirectLoggedInToOverview
+    },
+    loadChildren: () => import('./pages/sign-up/sign-up.module').then(m => m.SignUpPageModule)
+  },
+  {
+    path: 'access-denied',
+    loadChildren: () => import('./pages/access-denied/access-denied.module').then(m => m.AccessDeniedPageModule)
+  },
+  {
+    path: 'page-not-found',
+    loadChildren: () => import('./pages/page-not-found/page-not-found.module').then(m => m.PageNotFoundPageModule)
+  },
+
 ];
 
 @NgModule({
