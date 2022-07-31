@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form-add-income2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <form [formGroup]="incomeForm" (ngSubmit)="submitForm()" novalidate>
+    <ion-list class="add-income-list">
+      <ion-item id="open-modal">
+        <ion-label position="stacked">Choose Date</ion-label>
+        <ion-input class="ion-text-end" formControlName="date" [value]="formattedString"> </ion-input>
+      </ion-item>
+
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Income Title</ion-label>
+        <ion-input formControlName="title"></ion-input>
+      </ion-item>
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Amount</ion-label>
+        <ion-input formControlName="amount"></ion-input>
+      </ion-item>
+      <ion-item lines="none" color="light">
+        <ion-label position="stacked">Income Category</ion-label>
+
+        <div>
+          <ion-button slot="start" fill="outline" color="dark">
+            <ion-icon name="add" slot="icon-only"></ion-icon>
+          </ion-button>
+          <ion-button slot="start">Salary</ion-button>
+          <ion-button slot="start">Rewards</ion-button>
+        </div>
+      </ion-item>
+    </ion-list>
+    <!-- <ion-button type="submit" expand="block" [disabled]="!contactForm.valid">Submit</ion-button> -->
+  </form>
+
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-content scrollY="false">
+        <ion-datetime presentation="date" #datetimemodal [value]="dateValue" size="cover"
+          (ionChange)="modalDateChanged(datetimemodal.value)">
+          <span slot="title">Select a Date</span>
+          <ion-buttons slot="buttons">
+            <ion-button (click)="close()">Dismiss</ion-button>
+            <ion-button (click)="select()" color="primary">Select</ion-button>
+          </ion-buttons>
+        </ion-datetime>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <form [formGroup]="incomeForm" (ngSubmit)="submitForm()" novalidate>
+      <ion-button type="submit" expand="block">Add Income</ion-button>
+    </form>
+  </ion-toolbar>
+</ion-footer>

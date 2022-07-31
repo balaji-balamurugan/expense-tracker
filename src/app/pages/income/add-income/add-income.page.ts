@@ -46,11 +46,7 @@ export class AddIncomePage implements OnInit {
 
   modalDateChanged(value: any) {
     this.dateValue = value;
-    this.formattedString = format(parseISO(value), 'HH:mm, MMM d, yyyy');
+    this.formattedString = format(parseISO(value), 'MMM d, yyyy');
   }
 
-
-  async select() {
-    await this.datetime.confirm(true);
-  }
 }

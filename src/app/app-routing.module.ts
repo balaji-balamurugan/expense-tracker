@@ -47,6 +47,11 @@ const routes: Routes = [
     path: 'goals',
     loadChildren: () => import('./pages/goals/goals.module').then((m) => m.GoalsPageModule),
   },
+  {
+    path: 'form-add-income2',
+    loadChildren: () => import('./form-add-income2/form-add-income2.module').then(m => m.FormAddIncome2PageModule)
+  },
+
 ];
 
 @NgModule({

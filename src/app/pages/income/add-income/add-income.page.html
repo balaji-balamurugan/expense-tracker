@@ -17,14 +17,14 @@
         <ion-input placeholder="select" [value]="formattedString" slot="end"> {{ formattedString }} </ion-input>
       </ion-item> -->
 
-      <ion-item lines="none" color="light">
+      <ion-item lines="none" color="light" id="open-date-modal">
         <ion-label position="stacked">Choose Date</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" placeholder="Set date" formControlName="date" [value]="formattedString"></ion-input>
       </ion-item>
 
-      <ion-item class="date-picker ion-margin" lines="none">
+      <!-- <ion-item class="date-picker ion-margin" lines="none">
         <ion-datetime presentation="date"></ion-datetime>
-      </ion-item>
+      </ion-item> -->
 
       <ion-item lines="none" color="light">
         <ion-label position="stacked">Income Title</ion-label>
@@ -49,15 +49,19 @@
     </ion-list>
   </form>
 
-  <!-- <ion-modal trigger="open-modal">
+  <ion-modal trigger="open-date-modal">
     <ion-content scrollY="false">
-      <ion-datetime #datetimemodal [value]="dateValue" size="cover" (ionChange)="modalDateChanged(datetimemodal.value)">
-        <ion-buttons slot="buttons">
-          <ion-button (click)="select()" color="primary">Select</ion-button>
-        </ion-buttons>
+      <ion-datetime presentation="date" size="cover" #datetimemodal [value]="dateValue"
+        (ionChange)="modalDateChanged(datetimemodal.value)">
+        <span slot="title">Select a Date</span>
       </ion-datetime>
     </ion-content>
-  </ion-modal> -->
+    <ion-footer>
+      <ion-toolbar>
+        <ion-button expand="block" (click)="dismiss()">Set Date {{ formattedString }}</ion-button>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-modal>
 </ion-content>
 
 <ion-footer>

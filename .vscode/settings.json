@@ -45,6 +45,7 @@
   "conventionalCommits.scopes": [
     "app",
     "add expense form",
-    "firebase"
+    "firebase",
+    "readme.md"
   ]
 }
