@@ -10,6 +10,7 @@ import { AddGoalPage } from './add-goal.page';
     FormsModule,
     IonicModule,
   ],
-  declarations: [AddGoalPage]
+  declarations: [AddGoalPage],
+  exports: [AddGoalPage]
 })
 export class AddGoalPageModule { }

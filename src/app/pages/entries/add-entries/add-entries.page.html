@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Overview</ion-title>
+    <ion-title>Add</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,14 +11,8 @@
   <div class="wave">
     <ion-row>
       <ion-col>
-        <ion-card class="ion-text-center">
-          <ion-card-header class="ion-padding">
-            <ion-icon name="notifications-circle-outline"></ion-icon>
-          </ion-card-header>
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="ion-text-center" (click)="addIncome()">
+        <ion-card class="ion-text-center min-h-min h-30"
+          (click)="addIncome()">
           <ion-card-header class="ion-padding">
             <ion-icon name="add-circle-outline"></ion-icon>
             <ion-card-subtitle class="ion-text-capitalize">Add Income</ion-card-subtitle>
@@ -26,15 +20,24 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="ion-text-center" (click)="addExpense()">
+        <ion-card class="ion-text-center min-h-min h-30"
+          (click)="addExpense()">
           <ion-card-header class="ion-padding">
-            <ion-icon name="notifications-circle-outline"></ion-icon>
+            <ion-icon name="add-circle-outline"></ion-icon>
             <ion-card-subtitle class="ion-text-capitalize">Add Expense</ion-card-subtitle>
           </ion-card-header>
         </ion-card>
       </ion-col>
+      <ion-col>
+        <ion-card class="ion-text-center min-h-min h-30"
+          (click)="addGoal()">
+          <ion-card-header class="ion-padding">
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <ion-card-subtitle class="ion-text-capitalize">Add Goal</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
     </ion-row>
-
     <ion-img src="/assets/images/svg.png"></ion-img>
   </div>
 
@@ -43,13 +46,18 @@
       <ion-label>
         <b>Latest Entries</b>
       </ion-label>
-      <ion-button slot="end" size="small" [routerLink]="['/entries-list']">
-        <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+      <ion-button slot="end"
+        size="small"
+        [routerLink]="['/entries-list']">
+        <ion-icon name="ellipsis-horizontal-outline"
+          color="secondary"></ion-icon>
       </ion-button>
     </ion-item>
 
     <ng-container *ngFor="let num of [].constructor(5)">
-      <et-entries-view [name]="'Food'" [date]="'12/90/1990'" [paymentMethod]="'Google Pay'">
+      <et-entries-view [name]="'Food'"
+        [date]="'12/90/1990'"
+        [paymentMethod]="'Google Pay'">
       </et-entries-view>
     </ng-container>
   </ion-list>

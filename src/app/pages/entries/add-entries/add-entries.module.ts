@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { EntriesViewComponentModule } from 'src/app/shared/components/entries-view/entries-view.module';
+import { AddGoalPageModule } from '../../goals/add-goal/add-goal.module';
 import { AddEntriesPage } from './add-entries.page';
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    EntriesViewComponentModule
+    EntriesViewComponentModule,
+    AddGoalPageModule
   ],
   declarations: [AddEntriesPage],
 })

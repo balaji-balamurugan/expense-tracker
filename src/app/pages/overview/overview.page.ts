@@ -8,17 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewPage implements OnInit {
   data = [];
-  categories = [];
+  categories: any[] = [];
 
   constructor(
     private http: HttpClient
   ) { }
 
   ngOnInit() {
-    this.http.get('./assets/data/db.json').subscribe((res: any) => {
-      this.data = res;
-      this.categories = res.categories;
-      console.log('res');
-    });
+    this.http.get('./assets/data/db.json')
+      .subscribe((res: any) => {
+        this.data = res;
+        this.categories = res.categories;
+      });
   }
 }
