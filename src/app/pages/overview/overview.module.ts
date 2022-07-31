@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { EntriesViewComponentModule } from 'src/app/shared/components/entries-view/entries-view.module';
-
 import { SwiperModule } from 'swiper/angular';
 import { OverviewPage } from './overview.page';
 

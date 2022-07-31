@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   template: `
     <ion-router-outlet></ion-router-outlet>
   `,
-  styleUrls: [],
 })
 export class AuthPage {
 }

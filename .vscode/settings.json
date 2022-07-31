@@ -46,6 +46,7 @@
     "app",
     "add expense form",
     "firebase",
-    "readme.md"
+    "readme.md",
+    "auth"
   ]
 }

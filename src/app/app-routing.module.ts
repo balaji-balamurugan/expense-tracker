@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { redirectUnauthorizedToLogin } from './auth/auth.guards';
 
 const routes: Routes = [
   {
@@ -33,6 +35,10 @@ const routes: Routes = [
   },
   {
     path: 'overview',
+    canActivate: [AngularFireAuthGuard],
+    data: {
+      authGuardPipe: redirectUnauthorizedToLogin
+    },
     loadChildren: () => import('./pages/overview/overview.module').then((m) => m.OverviewPageModule),
   },
   {
@@ -51,7 +57,6 @@ const routes: Routes = [
     path: 'form-add-income2',
     loadChildren: () => import('./form-add-income2/form-add-income2.module').then(m => m.FormAddIncome2PageModule)
   },
-
 ];
 
 @NgModule({
@@ -59,3 +64,4 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
+
