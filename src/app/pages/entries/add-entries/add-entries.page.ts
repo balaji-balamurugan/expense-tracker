@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { SwiperComponent } from 'swiper/angular';
-import { AddExpensePage } from '../../expense/add-expense/add-expense.page';
-import { AddGoalPage } from '../../goals/add-goal/add-goal.page';
-import { AddIncomePage } from '../../income/add-income/add-income.page';
+import { AddExpensePage } from '../add-expense/add-expense.page';
+import { AddGoalPage } from '../add-goal/add-goal.page';
+import { AddIncomePage } from '../add-income/add-income.page';
 // SwiperCore.use([Pagination, Autoplay]);
 
 @Component({

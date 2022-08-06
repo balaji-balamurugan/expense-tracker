@@ -2,15 +2,16 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { AddIncomePage } from './add-income.page';
+import { AddGoalPage } from './add-goal.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [AddIncomePage],
+  declarations: [AddGoalPage],
+  exports: [AddGoalPage]
 })
-export class AddIncomePageModule { }
+export class AddGoalPageModule { }

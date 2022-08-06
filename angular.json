@@ -166,11 +166,11 @@
   "schematics": {
     "@ionic/angular-toolkit:component": {
       "styleext": "scss",
-      "skipTests": true
+      "spec": false
     },
     "@ionic/angular-toolkit:page": {
       "styleext": "scss",
-      "skipTests": true
+      "spec": false
     }
   }
 }

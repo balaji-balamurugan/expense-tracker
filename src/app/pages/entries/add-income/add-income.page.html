@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>form-add-income2</ion-title>
+    <ion-title>Add Income</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="modalController.dismiss()">
+        <ion-icon slot="icon-only"
+          name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -13,8 +19,7 @@
         color="light">
         <ion-label position="stacked">Choose Date</ion-label>
         <ion-input class="ion-text-start"
-          formControlName="date"
-          [value]="formattedString"> </ion-input>
+          formControlName="date"> </ion-input>
       </ion-item>
 
       <ion-item lines="none"
@@ -45,22 +50,20 @@
   </form>
 
   <ion-modal trigger="open-modal">
-    <ng-template>
-      <ion-content scrollY="false">
-        <ion-datetime presentation="date"
-          #datetimemodal
-          [value]="dateValue"
-          size="cover"
-          (ionChange)="modalDateChanged(datetimemodal.value)">
-          <span slot="title">Select a Date</span>
-          <ion-buttons slot="buttons">
-            <ion-button (click)="close()">Dismiss</ion-button>
-            <ion-button (click)="select()"
-              color="primary">Select</ion-button>
-          </ion-buttons>
-        </ion-datetime>
-      </ion-content>
-    </ng-template>
+    <ion-content scrollY="false">
+      <ion-datetime presentation="date"
+        #datetimemodal
+        [value]="datetimemodal.value"
+        size="cover"
+        (ionChange)="modalDateChanged(datetimemodal.value)">
+        <span slot="title">Select a Date</span>
+        <ion-buttons slot="buttons">
+          <ion-button (click)="datetimemodal.cancel(true)">Dismiss</ion-button>
+          <ion-button (click)="datetimemodal.confirm(true)"
+            color="primary">Select</ion-button>
+        </ion-buttons>
+      </ion-datetime>
+    </ion-content>
   </ion-modal>
 </ion-content>
 

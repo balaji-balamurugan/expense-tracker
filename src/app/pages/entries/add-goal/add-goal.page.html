@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Goal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="modalController.dismiss()">
+        <ion-icon slot="icon-only"
+          name="close">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list class="add-goal-list"
+    [formGroup]="goalForm">
+    <ion-item lines="none"
+      color="light">
+      <ion-label position="stacked">Goal Title</ion-label>
+      <ion-input type="text"
+        formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none"
+      color="light">
+      <ion-label position="stacked">Amount</ion-label>
+      <ion-input type="number"
+        formControlName="amount"></ion-input>
+    </ion-item>
+
+    <ion-item lines="none"
+      color="light">
+      <ion-label position="stacked">Contribution Type</ion-label>
+      <ion-select interface="action-sheet"
+        formControlName="period">
+        <ion-select-option value="yearly">Yearly</ion-select-option>
+        <ion-select-option value="monthly">Monthly</ion-select-option>
+        <ion-select-option value="weekly">Weekly</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item id="open-modal"
+      lines="none"
+      color="light">
+      <ion-label position="stacked">Choose Date</ion-label>
+      <ion-input class="ion-text-start"
+        formControlName="date"> </ion-input>
+    </ion-item>
+
+    <ion-modal trigger="open-modal">
+      <ion-content scrollY="false">
+        <ion-datetime presentation="date"
+          #datetimemodal
+          size="cover"
+          (ionChange)="modalDateChanged(datetimemodal.value)">
+          <span slot="title">Select a Date</span>
+          <ion-buttons slot="buttons">
+            <ion-button (click)="datetimemodal.cancel(true)">Dismiss</ion-button>
+            <ion-button (click)="datetimemodal.confirm(true)"
+              color="primary">Select</ion-button>
+          </ion-buttons>
+        </ion-datetime>
+      </ion-content>
+    </ion-modal>
+
+  </ion-list>
+
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block">Add Goal</ion-button>
+  </ion-toolbar>
+</ion-footer>

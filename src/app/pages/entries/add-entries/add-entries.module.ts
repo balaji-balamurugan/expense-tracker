@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { EntriesViewComponentModule } from 'src/app/shared/components/entries-view/entries-view.module';
-import { AddGoalPageModule } from '../../goals/add-goal/add-goal.module';
+import { AddExpensePage } from '../add-expense/add-expense.page';
+import { AddGoalPageModule } from '../add-goal/add-goal.module';
+import { AddIncomePage } from '../add-income/add-income.page';
 import { AddEntriesPage } from './add-entries.page';
 
 const routes: Routes = [
@@ -19,10 +21,15 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes),
     EntriesViewComponentModule,
-    AddGoalPageModule
+    AddGoalPageModule,
   ],
-  declarations: [AddEntriesPage],
+  declarations: [
+    AddEntriesPage,
+    AddIncomePage,
+    AddExpensePage
+  ],
 })
 export class AddEntriesPageModule { }

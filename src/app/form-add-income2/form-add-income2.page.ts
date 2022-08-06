@@ -22,6 +22,7 @@ export class FormAddIncome2Page implements OnInit {
       amount: new FormControl('', Validators.required),
     });
   }
+
   modalDateChanged(value: any) {
     this.dateValue = value;
     this.formattedString = format(parseISO(value), 'MMM d, yyyy');
@@ -34,6 +35,7 @@ export class FormAddIncome2Page implements OnInit {
   async select() {
     await this.datetime.confirm(true);
   }
+
   submitForm() {
     console.log(this.incomeForm.value);
   }
