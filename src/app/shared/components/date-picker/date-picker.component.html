@@ -2,19 +2,23 @@
   <ion-toolbar>
     <ion-title>Choose Date</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="dismiss()">
-        <ion-icon slot="icon-only" name="close"></ion-icon>
+      <ion-button (click)="modalController.dismiss()">
+        <ion-icon slot="icon-only"
+          name="close"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-datetime presentation="date" size="cover"></ion-datetime>
+  <ion-datetime presentation="date"
+    size="cover"
+    #dateTime></ion-datetime>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="block" (click)="dismiss()">Close</ion-button>
+    <ion-button expand="block"
+      (click)="modalController.dismiss(this.dateTime.value)">Select</ion-button>
   </ion-toolbar>
 </ion-footer>

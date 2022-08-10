@@ -1,10 +1,8 @@
-import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { SwiperComponent } from 'swiper/angular';
 import { AddExpensePage } from '../add-expense/add-expense.page';
-import { AddGoalPage } from '../add-goal/add-goal.page';
 import { AddIncomePage } from '../add-income/add-income.page';
-// SwiperCore.use([Pagination, Autoplay]);
+import { AddGoalPage } from './../add-goal/add-goal.page';
 
 @Component({
   selector: 'et-add-entries',
@@ -13,20 +11,19 @@ import { AddIncomePage } from '../add-income/add-income.page';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddEntriesPage {
-  @ViewChild('swiper') swiper!: SwiperComponent;
 
   constructor(public modalController: ModalController) { }
-
-  async addIncome() {
-    const modal = await this.modalController.create({
-      component: AddIncomePage,
-    });
-    return await modal.present();
-  }
 
   async addExpense() {
     const modal = await this.modalController.create({
       component: AddExpensePage,
+    });
+    return await modal.present();
+  }
+
+  async addIncome() {
+    const modal = await this.modalController.create({
+      component: AddIncomePage,
     });
     return await modal.present();
   }
@@ -37,4 +34,5 @@ export class AddEntriesPage {
     });
     return await modal.present();
   }
+
 }

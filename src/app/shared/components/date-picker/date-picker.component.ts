@@ -7,11 +7,8 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./date-picker.component.scss'],
 })
 export class DatePickerComponent {
-  constructor(public modalController: ModalController) { }
-  dismiss() {
-    this.modalController.dismiss({
-      data: '',
-      dismissed: true,
-    });
+
+  constructor(public modalController: ModalController) {
   }
+
 }

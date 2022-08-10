@@ -9,7 +9,6 @@ import { format, parseISO } from 'date-fns';
   styleUrls: ['./add-goal.page.scss'],
 })
 export class AddGoalPage {
-
   goalForm: FormGroup;
 
   constructor(
@@ -20,7 +19,7 @@ export class AddGoalPage {
       name: this.fb.control('New car'),
       amount: this.fb.control(0),
       period: this.fb.control('yearly'),
-      date: this.fb.control(''),
+      date: this.fb.control(format(new Date(), 'MMM d, yyyy')),
     });
   }
 

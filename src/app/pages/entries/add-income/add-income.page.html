@@ -19,6 +19,7 @@
         color="light">
         <ion-label position="stacked">Choose Date</ion-label>
         <ion-input class="ion-text-start"
+          id="datetimeValue"
           formControlName="date"> </ion-input>
       </ion-item>
 
@@ -30,7 +31,8 @@
       <ion-item lines="none"
         color="light">
         <ion-label position="stacked">Amount</ion-label>
-        <ion-input formControlName="amount"></ion-input>
+        <ion-input formControlName="amount"
+          type="number"></ion-input>
       </ion-item>
       <ion-item lines="none"
         color="light">
@@ -50,21 +52,24 @@
   </form>
 
   <ion-modal trigger="open-modal">
-    <ion-content scrollY="false">
-      <ion-datetime presentation="date"
-        #datetimemodal
-        [value]="datetimemodal.value"
-        size="cover"
-        (ionChange)="modalDateChanged(datetimemodal.value)">
-        <span slot="title">Select a Date</span>
-        <ion-buttons slot="buttons">
-          <ion-button (click)="datetimemodal.cancel(true)">Dismiss</ion-button>
-          <ion-button (click)="datetimemodal.confirm(true)"
-            color="primary">Select</ion-button>
-        </ion-buttons>
-      </ion-datetime>
-    </ion-content>
+    <ng-template>
+      <ion-content>
+        <ion-datetime presentation="date"
+          id="datetime"
+          #datetimemodal
+          size="cover"
+          (ionChange)="modalDateChanged(datetimemodal.value)">
+          <span slot="title">Select a Date</span>
+          <ion-buttons slot="buttons">
+            <ion-button (click)="datetimemodal.cancel(true)">Dismiss</ion-button>
+            <ion-button (click)="datetimemodal.confirm(true)"
+              color="primary">Select</ion-button>
+          </ion-buttons>
+        </ion-datetime>
+      </ion-content>
+    </ng-template>
   </ion-modal>
+
 </ion-content>
 
 

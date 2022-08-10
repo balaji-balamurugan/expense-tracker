@@ -1,7 +1,7 @@
-<ion-header class="ion-no-border">
+<ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button auto-hide="false"></ion-back-button>
     </ion-buttons>
     <ion-title>Add</ion-title>
   </ion-toolbar>
@@ -11,7 +11,8 @@
   <div class="wave">
     <ion-row>
       <ion-col>
-        <ion-card class="ion-text-center min-h-min h-30"
+        <ion-card class="ion-text-center"
+          style="min-height: 100px;"
           (click)="addIncome()">
           <ion-card-header class="ion-padding">
             <ion-icon name="add-circle-outline"></ion-icon>
@@ -20,7 +21,8 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="ion-text-center min-h-min h-30"
+        <ion-card class="ion-text-center"
+          style="min-height: 100px;"
           (click)="addExpense()">
           <ion-card-header class="ion-padding">
             <ion-icon name="add-circle-outline"></ion-icon>
@@ -29,7 +31,8 @@
         </ion-card>
       </ion-col>
       <ion-col>
-        <ion-card class="ion-text-center min-h-min h-30"
+        <ion-card class="ion-text-center"
+          style="min-height: 100px;"
           (click)="addGoal()">
           <ion-card-header class="ion-padding">
             <ion-icon name="add-circle-outline"></ion-icon>

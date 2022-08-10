@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <div class="wave">
+  <div class="wave ion-padding-vertical">
     <swiper class="overview-swiper-wrapper"
       [spaceBetween]="0"
       [slidesPerView]="2.8">
@@ -55,24 +55,14 @@
       </ng-template>
     </swiper>
 
-    <ion-img src="/assets/images/svg.png"></ion-img>
+    <!-- <ion-img src="/assets/images/svg.png"></ion-img> -->
   </div>
 
   <swiper class="overview-category-wrapper"
-    [slidesPerView]="2.5"
+    [slidesPerView]="3"
     [spaceBetween]="10">
+
     <ng-template swiperSlide>
-
-      <!-- ---loop error---------->
-      <!-- <ion-card class="ion-no-maargin"
-        [routerLink]="['/savings']"
-        *ngFor="let category of categories">
-        <ion-card-header class="ion-padding">
-          <ion-icon [name]="category?.icon"></ion-icon>
-          <ion-card-subtitle class="ion-text-capitalize">{{category.name}}</ion-card-subtitle>
-        </ion-card-header>
-      </ion-card> -->
-
       <ion-card [routerLink]="['/savings']">
         <ion-card-header class="ion-padding">
           <ion-icon name="add-circle-outline"></ion-icon>
@@ -80,6 +70,7 @@
         </ion-card-header>
       </ion-card>
     </ng-template>
+
     <ng-template swiperSlide>
       <ion-card [routerLink]="['/reminder']">
         <ion-card-header class="ion-padding">
@@ -88,6 +79,7 @@
         </ion-card-header>
       </ion-card>
     </ng-template>
+
     <ng-template swiperSlide>
       <ion-card [routerLink]="['/goals']">
         <ion-card-header class="ion-padding">
@@ -96,6 +88,7 @@
         </ion-card-header>
       </ion-card>
     </ng-template>
+
   </swiper>
 
   <ion-list class="latest-entries-list">

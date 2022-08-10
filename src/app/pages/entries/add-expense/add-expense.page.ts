@@ -11,8 +11,8 @@ export class AddExpensePage implements OnInit {
   expenseForm!: FormGroup;
 
   constructor(
+    private fb: NonNullableFormBuilder,
     public modalController: ModalController,
-    private fb: NonNullableFormBuilder
   ) { }
 
   ngOnInit() {

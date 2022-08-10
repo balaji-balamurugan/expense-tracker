@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
-import { IonDatetime, ModalController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { format, parseISO } from 'date-fns';
 
 @Component({
@@ -10,10 +10,7 @@ import { format, parseISO } from 'date-fns';
 })
 export class AddIncomePage implements OnInit {
 
-  @ViewChild(IonDatetime) datetime!: IonDatetime;
   incomeForm!: FormGroup;
-  formattedString: any;
-
   constructor(
     public modalController: ModalController,
     private fb: NonNullableFormBuilder
@@ -33,6 +30,7 @@ export class AddIncomePage implements OnInit {
 
   submitForm() {
     console.log(this.incomeForm.value);
+    this.modalController.dismiss();
   }
 
 }
