@@ -62,10 +62,9 @@
 
   <ion-list class="expense-list"
     *ngIf="segmentModel === 'categories'">
-    <ion-list-header color="primary">
-      <ion-label></ion-label>
-    </ion-list-header>
-
-    Chart
+    <div echarts
+      [options]="options"
+      [theme]="theme"
+      class="demo-chart"></div>
   </ion-list>
 </ion-content>

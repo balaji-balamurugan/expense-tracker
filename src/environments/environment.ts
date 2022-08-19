@@ -4,7 +4,7 @@
 
 export const environment = {
   firebase: {
-    projectId: 'demo-project',
+    projectId: 'expense-tracker-app-bf2ba',
     appId: '1:792008958304:web:3cea14c4168db2158cfe05',
     storageBucket: 'expense-tracker-app-bf2ba.appspot.com',
     apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',

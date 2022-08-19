@@ -11,16 +11,17 @@
 </ion-header>
 
 <ion-content color="light">
-  <form [formGroup]="incomeForm"
-    novalidate>
+
+  <form [formGroup]="incomeForm">
+
     <ion-list class="add-income-list">
+
       <ion-item id="open-modal"
         lines="none"
         color="light">
         <ion-label position="stacked">Choose Date</ion-label>
         <ion-input class="ion-text-start"
-          id="datetimeValue"
-          formControlName="date"> </ion-input>
+          [value]="(incomeForm.get('date')?.value | date: 'MMM d, yyyy')"> </ion-input>
       </ion-item>
 
       <ion-item lines="none"
@@ -28,12 +29,14 @@
         <ion-label position="stacked">Income Title</ion-label>
         <ion-input formControlName="title"></ion-input>
       </ion-item>
+
       <ion-item lines="none"
         color="light">
         <ion-label position="stacked">Amount</ion-label>
         <ion-input formControlName="amount"
           type="number"></ion-input>
       </ion-item>
+
       <ion-item lines="none"
         color="light">
         <ion-label position="stacked">Income Category</ion-label>
@@ -48,27 +51,39 @@
           <ion-button slot="start">Rewards</ion-button>
         </div>
       </ion-item>
-    </ion-list>
-  </form>
 
-  <ion-modal trigger="open-modal">
-    <ng-template>
-      <ion-content>
-        <ion-datetime presentation="date"
-          id="datetime"
-          #datetimemodal
-          size="cover"
-          (ionChange)="modalDateChanged(datetimemodal.value)">
-          <span slot="title">Select a Date</span>
-          <ion-buttons slot="buttons">
-            <ion-button (click)="datetimemodal.cancel(true)">Dismiss</ion-button>
-            <ion-button (click)="datetimemodal.confirm(true)"
-              color="primary">Select</ion-button>
-          </ion-buttons>
-        </ion-datetime>
-      </ion-content>
-    </ng-template>
-  </ion-modal>
+      <ion-item>
+        <ion-label>Action Sheet</ion-label>
+        <ion-select [interfaceOptions]="customActionSheetOptions"
+          interface="action-sheet"
+          placeholder="Select One">
+          <ion-select-option value="red">Red</ion-select-option>
+          <ion-select-option value="green">Green</ion-select-option>
+          <ion-select-option value="blue">Blue</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-modal trigger="open-modal">
+      <ng-template>
+        <ion-content>
+          <ion-datetime presentation="date"
+            #datetimemodal
+            size="cover"
+            formControlName="date">
+            <span slot="title">Select a Date</span>
+            <ion-buttons slot="buttons">
+              <ion-button (click)="datetimemodal.cancel(true)">Dismiss</ion-button>
+              <ion-button (click)="datetimemodal.confirm(true)"
+                color="primary">Select</ion-button>
+            </ion-buttons>
+          </ion-datetime>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+  </form>
 
 </ion-content>
 

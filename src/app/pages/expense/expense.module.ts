@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { NgxEchartsModule } from 'ngx-echarts';
 import { ExpensePage } from './expense.page';
 
 const routes: Routes = [
@@ -13,7 +14,15 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    RouterModule.forChild(routes),
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
+  ],
   declarations: [ExpensePage],
 })
 export class ExpensePageModule { }

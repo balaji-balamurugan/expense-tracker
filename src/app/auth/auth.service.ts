@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { updateProfile } from 'firebase/auth';
 import firebase from 'firebase/compat/app';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +11,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AuthService {
 
   userAuthState!: firebase.User | null;
-  private _userAuthState = new BehaviorSubject<firebase.User | null>(null);
+  private _userAuthState = new Subject<firebase.User | null>();
 
   constructor(private _fbAuth: AngularFireAuth) {
     this._fbAuth
       .authState
       .subscribe((authState: firebase.User | null) => {
+        console.log('hitting firebase auth', authState);
         if (authState) {
           this.userAuthState = authState;
           this._userAuthState.next(authState);

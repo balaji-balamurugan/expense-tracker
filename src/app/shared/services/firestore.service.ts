@@ -13,7 +13,7 @@ import { catchError, map } from 'rxjs/operators';
 })
 export class FirestoreService {
 
-  userAuthState!: firebase.User;
+  userAuthState!: firebase.User | null;
   private tenantID!: string;
 
   constructor(
@@ -22,17 +22,17 @@ export class FirestoreService {
   ) {
     this._fbAuth.authState
       .subscribe((authState) => {
-        this.userAuthState = authState as firebase.User;
+        this.userAuthState = authState;
       });
   }
 
   /// ****** Get a Reference ****** ///
   col<T>(ref: string, queryFn?: QueryFn<firebase.firestore.DocumentData>): AngularFirestoreCollection<T> {
-    return this.afs.collection<T>(`tenant/${this.tenantID}/${ref}`, queryFn);
+    return this.afs.collection<T>(`app/${this.tenantID}/${ref}`, queryFn);
   }
 
   doc<T>(ref: string): AngularFirestoreDocument<T> {
-    return this.afs.doc<T>(`tenant/${this.tenantID}/${ref}`);
+    return this.afs.doc<T>(`app/${this.tenantID}/${ref}`);
   }
 
   // -----------------------------------------------------------------------------------------------------

@@ -1,8 +1,9 @@
 ion-list {
   .date-picker {
-    --ripple-color: transparent;
+    --ripple-color: var(--ion-color-white);
 
     ion-datetime {
+      width: 100%;
       font-size: 14px;
       --background: var(--ion-color-white);
     }
@@ -37,7 +38,5 @@ ion-list {
     small {
       font-size: 11px;
     }
-
-
   }
 }
