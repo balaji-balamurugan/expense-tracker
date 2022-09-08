@@ -23,6 +23,8 @@ npm-debug.log*
 /.sass-cache
 /.sourcemaps
 /.versions
+/src/environments
+
 # /.vscode
 /coverage
 /dist
@@ -35,5 +37,7 @@ npm-debug.log*
 
 # Firebase
 .firebase
+.firebaserc
 *-debug.log
 .runtimeconfig.json
+
