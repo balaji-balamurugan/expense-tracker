@@ -5,7 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { EntriesViewComponent } from './entries-view.component';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, IonicModule,],
+  imports: [CommonModule, FormsModule, IonicModule],
   declarations: [EntriesViewComponent],
   exports: [EntriesViewComponent]
 })

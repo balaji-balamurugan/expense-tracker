@@ -49,6 +49,7 @@
     "readme.md",
     "auth",
     "overview",
-    "add entries"
+    "add entries",
+    "storybook"
   ]
 }
