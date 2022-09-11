@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { IonicModule } from '@ionic/angular';
+import { linkTo } from '@storybook/addon-links';
 import { Meta, moduleMetadata, Story } from '@storybook/angular/';
 import { EntriesViewComponent } from 'src/app/shared/components/entries-view/entries-view.component';
 
@@ -18,14 +19,17 @@ export default {
 
 const Template: Story<EntriesViewComponent> = (args: EntriesViewComponent) => ({
   component: EntriesViewComponent,
-  props: args,
+  props: {
+    ...args,
+    entryClicked: linkTo('Date Picker')
+  }
 });
 
-export const Primary = Template.bind({});
+export const entriesView = Template.bind({});
 
-Primary.args = {
+entriesView.args = {
   name: 'Hello',
   date: new Date().toISOString(),
-  paymentMethod: 'Gpay'
+  paymentMethod: 'Gpay',
 };
 

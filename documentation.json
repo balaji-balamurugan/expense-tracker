@@ -2277,130 +2277,6 @@
             "stylesData": ""
         },
         {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
-            "file": "src/stories/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
-            "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 26,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 711,
-                            "end": 724,
-                            "flags": 4227072,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 325,
-                            "tagName": {
-                                "pos": 712,
-                                "end": 720,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 40,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 20,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nHow large should the button be?\n",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 32,
-                    "type": "\"small\" | \"medium\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 46,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
-                    "styleUrl": "./button.css"
-                }
-            ],
-            "stylesData": "",
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 48
-                    }
-                }
-            }
-        },
-        {
             "name": "DatePickerComponent",
             "id": "component-DatePickerComponent-256aeca02cc63d2b134436074fbbfda0488478c396487163bf3dddb235eb559029b871f84b569c950f0b0a2c73e2ff524904076b91d64e42545300c9ecf52730",
             "file": "src/app/shared/components/date-picker/date-picker.component.ts",
@@ -2543,7 +2419,7 @@
         },
         {
             "name": "EntriesViewComponent",
-            "id": "component-EntriesViewComponent-f6571b7ab92508c17406f9723202cdba2b7a253fb8fb38d4d9af2d6b39d23d4a3b3841429e4441e6d154d1c9f973924edbe6ca0971f82dfb10225ebc79e1c639",
+            "id": "component-EntriesViewComponent-7e4f347e2748300abedc26ad3ae3ed205a43f47eb1ef71b1497e15edb7b5ce399802846016511b18ef8f6b0b6a8ad454c1a3b1bde320d8090c290b853b5cb365",
             "file": "src/app/shared/components/entries-view/entries-view.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2556,7 +2432,7 @@
             "styles": [
                 "\n    h6{\n      font-size:14px;\n    }\n    p{\n      font-size: 13px;\n    }"
             ],
-            "template": "<ion-item>\n  <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\n  <ion-label>\n    <h6>\n      <b>{{name}}</b>\n    </h6>\n    <p>{{date}}</p>\n  </ion-label>\n  <ion-text class=\"ion-text-end\" slot=\"end\">\n    <p>\n      <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\n    </p>\n    <small>\n      <ion-text color=\"medium\"> {{paymentMethod}} </ion-text>\n    </small>\n  </ion-text>\n</ion-item>\n",
+            "template": "<ion-item (click)=\"entryClicked.emit()\">\n  <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\n  <ion-label>\n    <h6>\n      <b>{{name}}</b>\n    </h6>\n    <p>{{date}}</p>\n  </ion-label>\n  <ion-text class=\"ion-text-end\" slot=\"end\">\n    <p>\n      <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\n    </p>\n    <small>\n      <ion-text color=\"medium\"> {{paymentMethod}} </ion-text>\n    </small>\n  </ion-text>\n</ion-item>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
@@ -2585,7 +2461,16 @@
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "entryClicked",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 47,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
@@ -2595,7 +2480,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-entries-view',\r\n  template: `\r\n    <ion-item>\r\n      <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\r\n      <ion-label>\r\n        <h6>\r\n          <b>{{name}}</b>\r\n        </h6>\r\n        <p>{{date}}</p>\r\n      </ion-label>\r\n      <ion-text class=\"ion-text-end\" slot=\"end\">\r\n        <p>\r\n          <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\r\n        </p>\r\n        <small>\r\n          <ion-text color=\"medium\"> {{paymentMethod}} </ion-text>\r\n        </small>\r\n      </ion-text>\r\n    </ion-item>\r\n  `,\r\n  styles: [\r\n    `\r\n    h6{\r\n      font-size:14px;\r\n    }\r\n    p{\r\n      font-size: 13px;\r\n    }`\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class EntriesViewComponent {\r\n\r\n  @Input()\r\n  name!: string;\r\n\r\n  @Input()\r\n  date!: string;\r\n\r\n  @Input()\r\n  paymentMethod!: string;\r\n}\r\n\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-entries-view',\r\n  template: `\r\n    <ion-item (click)=\"entryClicked.emit()\">\r\n      <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\r\n      <ion-label>\r\n        <h6>\r\n          <b>{{name}}</b>\r\n        </h6>\r\n        <p>{{date}}</p>\r\n      </ion-label>\r\n      <ion-text class=\"ion-text-end\" slot=\"end\">\r\n        <p>\r\n          <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\r\n        </p>\r\n        <small>\r\n          <ion-text color=\"medium\"> {{paymentMethod}} </ion-text>\r\n        </small>\r\n      </ion-text>\r\n    </ion-item>\r\n  `,\r\n  styles: [\r\n    `\r\n    h6{\r\n      font-size:14px;\r\n    }\r\n    p{\r\n      font-size: 13px;\r\n    }`\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class EntriesViewComponent {\r\n\r\n  @Input()\r\n  name!: string;\r\n\r\n  @Input()\r\n  date!: string;\r\n\r\n  @Input()\r\n  paymentMethod!: string;\r\n\r\n  @Output()\r\n  entryClicked = new EventEmitter<void>();\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n    h6{\n      font-size:14px;\n    }\n    p{\n      font-size: 13px;\n    }\n"
@@ -2803,79 +2688,6 @@
                 "OnInit"
             ],
             "templateData": "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>goals</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n\r\n  <!-- ------- routing issue------ -->\r\n  <!-- <ion-fab vertical=\"top\" horizontal=\"end\" slot=\"fixed\" size=\"small\" edge [routerLink]=\"\r\n    ['/add-goal']\">\r\n    <ion-fab-button size=\"small\">\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab> -->\r\n</ion-content>\r\n"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
-            "file": "src/stories/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-header",
-            "styleUrls": [
-                "./header.css"
-            ],
-            "styles": [],
-            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 65,
-                    "type": "User | null",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 74,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 68,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 71,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
-                    "styleUrl": "./header.css"
-                }
-            ],
-            "stylesData": ""
         },
         {
             "name": "HomePage",
@@ -3348,86 +3160,6 @@
                 "OnInit"
             ],
             "templateData": "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Overview</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"wave ion-padding-vertical\">\r\n    <swiper class=\"overview-swiper-wrapper\"\r\n      [spaceBetween]=\"0\"\r\n      [slidesPerView]=\"2.5\">\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Salary</ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top select\"\r\n          [routerLink]=\"['/expense']\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Monthly Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n    </swiper>\r\n\r\n    <ion-img src=\"../../../assets/images/svg.png\"></ion-img>\r\n  </div>\r\n\r\n  <swiper class=\"overview-category-wrapper\"\r\n    [slidesPerView]=\"3\"\r\n    [spaceBetween]=\"10\">\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/savings']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Savings</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/reminder']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Reminder</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/goals']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Goals</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n  </swiper>\r\n\r\n  <ion-list class=\"latest-entries-list\">\r\n    <ion-item lines=\"none\">\r\n      <ion-label>\r\n        <b>Latest Entries</b>\r\n      </ion-label>\r\n      <ion-button slot=\"end\"\r\n        size=\"small\"\r\n        [routerLink]=\"['/entries-list']\">\r\n        <ion-icon name=\"ellipsis-horizontal-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-item>\r\n\r\n    <ng-container *ngFor=\"let num of [].constructor(5)\">\r\n      <et-entries-view [name]=\"'Food'\"\r\n        [date]=\"'12/90/1990'\"\r\n        [paymentMethod]=\"'Google Pay'\">\r\n      </et-entries-view>\r\n    </ng-container>\r\n  </ion-list>\r\n\r\n  <ion-tabs>\r\n    <ion-tab-bar slot=\"bottom\">\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"home-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"stats-chart-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button></ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"calendar-clear-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"settings-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n    </ion-tab-bar>\r\n  </ion-tabs>\r\n\r\n  <ion-fab vertical=\"bottom\"\r\n    horizontal=\"center\"\r\n    slot=\"fixed\"\r\n    [routerLink]=\"['/add-entries']\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n</ion-content>\r\n"
-        },
-        {
-            "name": "PageComponent",
-            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
-            "file": "src/stories/page.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-page",
-            "styleUrls": [
-                "./page.css"
-            ],
-            "styles": [],
-            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "User | null",
-                    "optional": false,
-                    "description": "",
-                    "line": 64
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "doCreateAccount",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 74,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "doLogin",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 70,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "doLogout",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 66,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
-                    "styleUrl": "./page.css"
-                }
-            ],
-            "stylesData": ""
         },
         {
             "name": "PageNotFoundPage",
@@ -4189,13 +3921,13 @@
         },
         {
             "name": "EntriesViewComponentModule",
-            "id": "module-EntriesViewComponentModule-6165c5d068f09b7a16ef2f2233b5aaba6f6c87a7f3de6fd250faecb1ac7010afec96d9b65647058940a382703ff317d8b649fc9a9ae4369f20e48cb390d168b8",
+            "id": "module-EntriesViewComponentModule-abaad214f267d08e405a8a899b1875067e328c83d95baf209442078b6306a632efb58b9ccc71ba80a58d55831d401e7e8047ced4f1d5dea927b116a8a132b49e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/components/entries-view/entries-view.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { IonicModule } from '@ionic/angular';\r\nimport { EntriesViewComponent } from './entries-view.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, FormsModule, IonicModule,],\r\n  declarations: [EntriesViewComponent],\r\n  exports: [EntriesViewComponent]\r\n})\r\nexport class EntriesViewComponentModule { }\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { IonicModule } from '@ionic/angular';\r\nimport { EntriesViewComponent } from './entries-view.component';\r\n\r\n@NgModule({\r\n  imports: [CommonModule, FormsModule, IonicModule],\r\n  declarations: [EntriesViewComponent],\r\n  exports: [EntriesViewComponent]\r\n})\r\nexport class EntriesViewComponentModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4795,6 +4527,16 @@
                 "defaultValue": "{\r\n  color: [\r\n    '#b21ab4',\r\n    '#6f0099',\r\n    '#2a2073',\r\n    '#0b5ea8',\r\n    '#17aecc',\r\n    '#b3b3ff',\r\n    '#eb99ff',\r\n    '#fae6ff',\r\n    '#e6f2ff',\r\n    '#eeeeee'\r\n  ],\r\n\r\n  title: {\r\n    textStyle: {\r\n      fontWeight: 'normal',\r\n      color: '#00aecd'\r\n    }\r\n  },\r\n\r\n  visualMap: {\r\n    color: ['#00aecd', '#a2d4e6']\r\n  },\r\n\r\n  toolbox: {\r\n    color: ['#00aecd', '#00aecd', '#00aecd', '#00aecd']\r\n  },\r\n\r\n  tooltip: {\r\n    backgroundColor: 'rgba(0,0,0,0.5)',\r\n    axisPointer: {\r\n      // Axis indicator, coordinate trigger effective\r\n      type: 'line', // The default is a straight line： 'line' | 'shadow'\r\n      lineStyle: {\r\n        // Straight line indicator style settings\r\n        color: '#00aecd',\r\n        type: 'dashed'\r\n      },\r\n      crossStyle: {\r\n        color: '#00aecd'\r\n      },\r\n      shadowStyle: {\r\n        // Shadow indicator style settings\r\n        color: 'rgba(200,200,200,0.3)'\r\n      }\r\n    }\r\n  },\r\n\r\n  // Area scaling controller\r\n  dataZoom: {\r\n    dataBackgroundColor: '#eee', // Data background color\r\n    fillerColor: 'rgba(144,197,237,0.2)', // Fill the color\r\n    handleColor: '#00aecd' // Handle color\r\n  },\r\n\r\n  timeline: {\r\n    lineStyle: {\r\n      color: '#00aecd'\r\n    },\r\n    controlStyle: {\r\n      color: '#00aecd',\r\n      borderColor: '00aecd'\r\n    }\r\n  },\r\n\r\n  candlestick: {\r\n    itemStyle: {\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    lineStyle: {\r\n      width: 1,\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    areaStyle: {\r\n      color: '#b21ab4',\r\n      color0: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  chord: {\r\n    padding: 4,\r\n    itemStyle: {\r\n      color: '#b21ab4',\r\n      borderWidth: 1,\r\n      borderColor: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    lineStyle: {\r\n      color: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    areaStyle: {\r\n      color: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  graph: {\r\n    itemStyle: {\r\n      color: '#b21ab4'\r\n    },\r\n    linkStyle: {\r\n      color: '#2a2073'\r\n    }\r\n  },\r\n\r\n  map: {\r\n    itemStyle: {\r\n      color: '#c12e34'\r\n    },\r\n    areaStyle: {\r\n      color: '#ddd'\r\n    },\r\n    label: {\r\n      color: '#c12e34'\r\n    }\r\n  },\r\n\r\n  gauge: {\r\n    axisLine: {\r\n      lineStyle: {\r\n        color: [\r\n          [0.2, '#dddddd'],\r\n          [0.8, '#00aecd'],\r\n          [1, '#f5ccff']\r\n        ],\r\n        width: 8\r\n      }\r\n    }\r\n  }\r\n}"
             },
             {
+                "name": "entriesView",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/entries-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4845,76 +4587,6 @@
                 "defaultValue": "'income'"
             },
             {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/entries-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
                 "name": "redirectLoggedInToOverview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4954,36 +4626,6 @@
                 "defaultValue": "[\r\n  {\r\n    path: '',\r\n    component: LogoutPage\r\n  }\r\n]"
             },
             {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4991,27 +4633,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<EntriesViewComponent>",
-                "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
+                "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Button')\r\n  }\r\n})"
             }
         ],
         "functions": [],
@@ -5105,6 +4727,28 @@
                     "defaultValue": "{\r\n  color: [\r\n    '#b21ab4',\r\n    '#6f0099',\r\n    '#2a2073',\r\n    '#0b5ea8',\r\n    '#17aecc',\r\n    '#b3b3ff',\r\n    '#eb99ff',\r\n    '#fae6ff',\r\n    '#e6f2ff',\r\n    '#eeeeee'\r\n  ],\r\n\r\n  title: {\r\n    textStyle: {\r\n      fontWeight: 'normal',\r\n      color: '#00aecd'\r\n    }\r\n  },\r\n\r\n  visualMap: {\r\n    color: ['#00aecd', '#a2d4e6']\r\n  },\r\n\r\n  toolbox: {\r\n    color: ['#00aecd', '#00aecd', '#00aecd', '#00aecd']\r\n  },\r\n\r\n  tooltip: {\r\n    backgroundColor: 'rgba(0,0,0,0.5)',\r\n    axisPointer: {\r\n      // Axis indicator, coordinate trigger effective\r\n      type: 'line', // The default is a straight line： 'line' | 'shadow'\r\n      lineStyle: {\r\n        // Straight line indicator style settings\r\n        color: '#00aecd',\r\n        type: 'dashed'\r\n      },\r\n      crossStyle: {\r\n        color: '#00aecd'\r\n      },\r\n      shadowStyle: {\r\n        // Shadow indicator style settings\r\n        color: 'rgba(200,200,200,0.3)'\r\n      }\r\n    }\r\n  },\r\n\r\n  // Area scaling controller\r\n  dataZoom: {\r\n    dataBackgroundColor: '#eee', // Data background color\r\n    fillerColor: 'rgba(144,197,237,0.2)', // Fill the color\r\n    handleColor: '#00aecd' // Handle color\r\n  },\r\n\r\n  timeline: {\r\n    lineStyle: {\r\n      color: '#00aecd'\r\n    },\r\n    controlStyle: {\r\n      color: '#00aecd',\r\n      borderColor: '00aecd'\r\n    }\r\n  },\r\n\r\n  candlestick: {\r\n    itemStyle: {\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    lineStyle: {\r\n      width: 1,\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    areaStyle: {\r\n      color: '#b21ab4',\r\n      color0: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  chord: {\r\n    padding: 4,\r\n    itemStyle: {\r\n      color: '#b21ab4',\r\n      borderWidth: 1,\r\n      borderColor: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    lineStyle: {\r\n      color: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    areaStyle: {\r\n      color: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  graph: {\r\n    itemStyle: {\r\n      color: '#b21ab4'\r\n    },\r\n    linkStyle: {\r\n      color: '#2a2073'\r\n    }\r\n  },\r\n\r\n  map: {\r\n    itemStyle: {\r\n      color: '#c12e34'\r\n    },\r\n    areaStyle: {\r\n      color: '#ddd'\r\n    },\r\n    label: {\r\n      color: '#c12e34'\r\n    }\r\n  },\r\n\r\n  gauge: {\r\n    axisLine: {\r\n      lineStyle: {\r\n        color: [\r\n          [0.2, '#dddddd'],\r\n          [0.8, '#00aecd'],\r\n          [1, '#f5ccff']\r\n        ],\r\n        width: 8\r\n      }\r\n    }\r\n  }\r\n}"
                 }
             ],
+            "src/stories/entries-list.stories.ts": [
+                {
+                    "name": "entriesView",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/entries-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/entries-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<EntriesViewComponent>",
+                    "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Button')\r\n  }\r\n})"
+                }
+            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -5127,144 +4771,6 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
-                }
-            ],
-            "src/stories/Button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-                }
-            ],
-            "src/stories/entries-list.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/entries-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/entries-list.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<EntriesViewComponent>",
-                    "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: args,\r\n})"
                 }
             ],
             "src/app/auth/auth.guards.ts": [
@@ -5776,7 +5282,7 @@
         ]
     },
     "coverage": {
-        "count": 1,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -6060,7 +5566,7 @@
                 "linktype": "component",
                 "name": "EntriesViewComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -6142,116 +5648,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/stories/User.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -6261,20 +5657,11 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
-            },
-            {
                 "filePath": "src/stories/entries-list.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "entriesView",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6287,24 +5674,6 @@
                 "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/stories/page.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "PageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
                 "status": "low"
             },
             {

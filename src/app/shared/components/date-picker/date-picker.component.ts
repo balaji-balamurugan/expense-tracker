@@ -8,7 +8,6 @@ import { ModalController } from '@ionic/angular';
 })
 export class DatePickerComponent {
 
-  constructor(public modalController: ModalController) {
-  }
+  constructor(public modalController: ModalController) { }
 
 }

@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'et-entries-view',
   template: `
-    <ion-item>
+    <ion-item (click)="entryClicked.emit()">
       <ion-icon name="fast-food-outline" slot="start" size="small"></ion-icon>
       <ion-label>
         <h6>
@@ -42,5 +42,8 @@ export class EntriesViewComponent {
 
   @Input()
   paymentMethod!: string;
+
+  @Output()
+  entryClicked = new EventEmitter<void>();
 }
 
