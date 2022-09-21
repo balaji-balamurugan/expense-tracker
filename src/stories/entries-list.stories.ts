@@ -29,7 +29,7 @@ export const entriesView = Template.bind({});
 
 entriesView.args = {
   name: 'Hello',
-  date: new Date().toISOString(),
+  date: new Date(),
   paymentMethod: 'Gpay',
 };
 

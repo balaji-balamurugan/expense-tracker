@@ -38,7 +38,7 @@ export class EntriesViewComponent {
   name!: string;
 
   @Input()
-  date = '';
+  date!: Date;
 
   @Input()
   paymentMethod!: string;

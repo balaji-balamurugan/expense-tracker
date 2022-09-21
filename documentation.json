@@ -1574,45 +1574,7 @@
         }
     ],
     "interceptors": [],
-    "classes": [
-        {
-            "name": "AppPage",
-            "id": "class-AppPage-a5105879deac7e368f9bf59540f1b18fd386971bc63151d5c7a809856cd94eee7d4b70f4fac7cf6ae57328a1d6237586477642baae18206fb52bbe23a545bad8",
-            "file": "e2e/src/app.po.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "class",
-            "sourceCode": "import { browser, by, element } from 'protractor';\r\n\r\nexport class AppPage {\r\n  navigateTo() {\r\n    return browser.get('/');\r\n  }\r\n\r\n  getParagraphText() {\r\n    return element(by.deepCss('app-root ion-content')).getText();\r\n  }\r\n}\r\n",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "getParagraphText",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 8,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "navigateTo",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 4,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "indexSignatures": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "hostBindings": [],
-            "hostListeners": []
-        }
-    ],
+    "classes": [],
     "directives": [],
     "components": [
         {
@@ -3701,13 +3663,13 @@
         },
         {
             "name": "AppModule",
-            "id": "module-AppModule-cd7f158a33bcb715ddb1a034c2a743a621b9c270b9de20a3216831a9934ecc591d093e38669dfb223d85aabf87ea75208899da9550aea4e05aadd9e8d0cae073",
+            "id": "module-AppModule-385548c1577af88a0d94ff7fc0cd24fe809f9fb7d33de596a578906822227a17b3c81f7ea8fd9a1c6dd02cb77a61a7ee7a403666970a96d552e9e5f0f51e5a0f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { AngularFireModule } from '@angular/fire/compat';\r\nimport { AngularFireAuthModule } from '@angular/fire/compat/auth';\r\nimport { AngularFirestoreModule } from '@angular/fire/compat/firestore';\r\nimport { AngularFireStorageModule } from '@angular/fire/compat/storage';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { RouteReuseStrategy } from '@angular/router';\r\nimport { IonicModule, IonicRouteStrategy } from '@ionic/angular';\r\nimport { environment } from '../environments/environment';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    IonicModule.forRoot(),\r\n    BrowserAnimationsModule,\r\n    AppRoutingModule,\r\n    AngularFireModule.initializeApp(environment.firebase),\r\n    AngularFireStorageModule,\r\n    AngularFirestoreModule,\r\n    AngularFireAuthModule,\r\n  ],\r\n  providers: [\r\n    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },\r\n  ],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {\r\n}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { AngularFireModule } from '@angular/fire/compat';\r\nimport { AngularFireAuthModule } from '@angular/fire/compat/auth';\r\nimport { AngularFirestoreModule } from '@angular/fire/compat/firestore';\r\nimport { AngularFireStorageModule } from '@angular/fire/compat/storage';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { RouteReuseStrategy } from '@angular/router';\r\nimport { IonicModule, IonicRouteStrategy } from '@ionic/angular';\r\nimport { environment } from '../environments/environment';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    BrowserAnimationsModule,\r\n    IonicModule.forRoot(),\r\n    BrowserAnimationsModule,\r\n    AppRoutingModule,\r\n    AngularFireModule.initializeApp(environment.firebase),\r\n    AngularFireStorageModule,\r\n    AngularFirestoreModule,\r\n    AngularFireAuthModule,\r\n  ],\r\n  providers: [\r\n    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },\r\n  ],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4485,26 +4447,6 @@
                 "defaultValue": "'app'"
             },
             {
-                "name": "config",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "capacitor.config.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "CapacitorConfig",
-                "defaultValue": "{\r\n  appId: 'io.ionic.starter',\r\n  appName: 'expense-tracker',\r\n  webDir: 'www',\r\n  bundledWebRuntime: false\r\n}"
-            },
-            {
-                "name": "context",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-            },
-            {
                 "name": "CoolTheme",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4538,21 +4480,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: false,\r\n  production: true\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
             },
             {
                 "name": "expensePath",
@@ -4603,15 +4545,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => redirectUnauthorizedTo(['/auth/login'])"
-            },
-            {
-                "name": "require",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/test.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "literal type"
             },
             {
                 "name": "routes",
@@ -4690,39 +4623,6 @@
                     "defaultValue": "'income'"
                 }
             ],
-            "capacitor.config.ts": [
-                {
-                    "name": "config",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "capacitor.config.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "CapacitorConfig",
-                    "defaultValue": "{\r\n  appId: 'io.ionic.starter',\r\n  appName: 'expense-tracker',\r\n  webDir: 'www',\r\n  bundledWebRuntime: false\r\n}"
-                }
-            ],
-            "src/test.ts": [
-                {
-                    "name": "context",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
-                },
-                {
-                    "name": "require",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/test.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "literal type"
-                }
-            ],
             "src/app/pages/expense/expense.page.ts": [
                 {
                     "name": "CoolTheme",
@@ -4779,18 +4679,6 @@
                     "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Date Picker')\r\n  }\r\n})"
                 }
             ],
-            "src/environments/environment.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
-                }
-            ],
             "src/environments/environment.prod.ts": [
                 {
                     "name": "environment",
@@ -4801,6 +4689,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: false,\r\n  production: true\r\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
                 }
             ],
             "src/app/auth/auth.guards.ts": [
@@ -5316,25 +5216,6 @@
         "status": "low",
         "files": [
             {
-                "filePath": "capacitor.config.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "config",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "e2e/src/app.po.ts",
-                "type": "class",
-                "linktype": "classe",
-                "name": "AppPage",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/app.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5713,26 +5594,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "context",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/test.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "require",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
