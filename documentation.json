@@ -1,19 +1,6 @@
 {
     "pipes": [],
-    "interfaces": [
-        {
-            "name": "User",
-            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
-            "file": "src/stories/User.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface User {}\n",
-            "properties": [],
-            "indexSignatures": [],
-            "methods": []
-        }
-    ],
+    "interfaces": [],
     "injectables": [
         {
             "name": "AuthService",
@@ -2278,7 +2265,7 @@
         },
         {
             "name": "DatePickerComponent",
-            "id": "component-DatePickerComponent-256aeca02cc63d2b134436074fbbfda0488478c396487163bf3dddb235eb559029b871f84b569c950f0b0a2c73e2ff524904076b91d64e42545300c9ecf52730",
+            "id": "component-DatePickerComponent-a0d0ed12b379a5862fb8324271a5572ca5173502d28068cdc9ef7c016ace2647311c1436b916a44e0398dccf5fec048a028a6cd86c56090ab76ec79e1037afa2",
             "file": "src/app/shared/components/date-picker/date-picker.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2318,7 +2305,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ModalController } from '@ionic/angular';\r\n\r\n@Component({\r\n  selector: 'et-date-picker',\r\n  templateUrl: './date-picker.component.html',\r\n  styleUrls: ['./date-picker.component.scss'],\r\n})\r\nexport class DatePickerComponent {\r\n\r\n  constructor(public modalController: ModalController) {\r\n  }\r\n\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ModalController } from '@ionic/angular';\r\n\r\n@Component({\r\n  selector: 'et-date-picker',\r\n  templateUrl: './date-picker.component.html',\r\n  styleUrls: ['./date-picker.component.scss'],\r\n})\r\nexport class DatePickerComponent {\r\n\r\n  constructor(public modalController: ModalController) { }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2353,7 +2340,7 @@
                     }
                 ]
             },
-            "templateData": "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Choose Date</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"modalController.dismiss()\">\r\n        <ion-icon slot=\"icon-only\"\r\n          name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-datetime presentation=\"date\"\r\n    size=\"cover\"\r\n    #dateTime></ion-datetime>\r\n</ion-content>\r\n\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-button expand=\"block\"\r\n      (click)=\"modalController.dismiss(this.dateTime.value)\">Select</ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n"
+            "templateData": "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Choose Date</ion-title>\r\n    <ion-buttons slot=\"end\">\r\n      <ion-button (click)=\"modalController.dismiss()\">\r\n        <ion-icon slot=\"icon-only\"\r\n          name=\"close\"></ion-icon>\r\n      </ion-button>\r\n    </ion-buttons>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-datetime presentation=\"date\"\r\n  size=\"cover\"\r\n  #dateTime>\r\n</ion-datetime>\r\n\r\n<ion-footer>\r\n  <ion-toolbar>\r\n    <ion-button expand=\"block\">Select</ion-button>\r\n  </ion-toolbar>\r\n</ion-footer>\r\n"
         },
         {
             "name": "EntriesListPage",
@@ -2419,7 +2406,7 @@
         },
         {
             "name": "EntriesViewComponent",
-            "id": "component-EntriesViewComponent-7e4f347e2748300abedc26ad3ae3ed205a43f47eb1ef71b1497e15edb7b5ce399802846016511b18ef8f6b0b6a8ad454c1a3b1bde320d8090c290b853b5cb365",
+            "id": "component-EntriesViewComponent-8a516cbd577b28206e613757c65d566d3b2cc8871a0ab6685f0d584f4647b090cbf5fb064de32a35ec572d232edbb988cd40510820454ba6f9c1257b1ae0144c",
             "file": "src/app/shared/components/entries-view/entries-view.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2432,12 +2419,13 @@
             "styles": [
                 "\n    h6{\n      font-size:14px;\n    }\n    p{\n      font-size: 13px;\n    }"
             ],
-            "template": "<ion-item (click)=\"entryClicked.emit()\">\n  <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\n  <ion-label>\n    <h6>\n      <b>{{name}}</b>\n    </h6>\n    <p>{{date}}</p>\n  </ion-label>\n  <ion-text class=\"ion-text-end\" slot=\"end\">\n    <p>\n      <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\n    </p>\n    <small>\n      <ion-text color=\"medium\"> {{paymentMethod}} </ion-text>\n    </small>\n  </ion-text>\n</ion-item>\n",
+            "template": "<ion-item (click)=\"entryClicked.emit()\" data-testid=\"entry-item\">\n  <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\n  <ion-label>\n    <h6>\n      <b data-testid=\"entry-name\">{{name}}</b>\n    </h6>\n    <p data-testid=\"entry-date\">{{date}}</p>\n  </ion-label>\n  <ion-text class=\"ion-text-end\" slot=\"end\">\n    <p>\n      <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\n    </p>\n    <small>\n      <ion-text color=\"medium\" data-testid=\"entry-payment\">{{paymentMethod}}</ion-text>\n    </small>\n  </ion-text>\n</ion-item>\n",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
                     "name": "date",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 41,
@@ -2480,7 +2468,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-entries-view',\r\n  template: `\r\n    <ion-item (click)=\"entryClicked.emit()\">\r\n      <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\r\n      <ion-label>\r\n        <h6>\r\n          <b>{{name}}</b>\r\n        </h6>\r\n        <p>{{date}}</p>\r\n      </ion-label>\r\n      <ion-text class=\"ion-text-end\" slot=\"end\">\r\n        <p>\r\n          <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\r\n        </p>\r\n        <small>\r\n          <ion-text color=\"medium\"> {{paymentMethod}} </ion-text>\r\n        </small>\r\n      </ion-text>\r\n    </ion-item>\r\n  `,\r\n  styles: [\r\n    `\r\n    h6{\r\n      font-size:14px;\r\n    }\r\n    p{\r\n      font-size: 13px;\r\n    }`\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class EntriesViewComponent {\r\n\r\n  @Input()\r\n  name!: string;\r\n\r\n  @Input()\r\n  date!: string;\r\n\r\n  @Input()\r\n  paymentMethod!: string;\r\n\r\n  @Output()\r\n  entryClicked = new EventEmitter<void>();\r\n}\r\n\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-entries-view',\r\n  template: `\r\n    <ion-item (click)=\"entryClicked.emit()\" data-testid=\"entry-item\">\r\n      <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\r\n      <ion-label>\r\n        <h6>\r\n          <b data-testid=\"entry-name\">{{name}}</b>\r\n        </h6>\r\n        <p data-testid=\"entry-date\">{{date}}</p>\r\n      </ion-label>\r\n      <ion-text class=\"ion-text-end\" slot=\"end\">\r\n        <p>\r\n          <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\r\n        </p>\r\n        <small>\r\n          <ion-text color=\"medium\" data-testid=\"entry-payment\">{{paymentMethod}}</ion-text>\r\n        </small>\r\n      </ion-text>\r\n    </ion-item>\r\n  `,\r\n  styles: [\r\n    `\r\n    h6{\r\n      font-size:14px;\r\n    }\r\n    p{\r\n      font-size: 13px;\r\n    }`\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class EntriesViewComponent {\r\n\r\n  @Input()\r\n  name!: string;\r\n\r\n  @Input()\r\n  date = '';\r\n\r\n  @Input()\r\n  paymentMethod!: string;\r\n\r\n  @Output()\r\n  entryClicked = new EventEmitter<void>();\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n    h6{\n      font-size:14px;\n    }\n    p{\n      font-size: 13px;\n    }\n"
@@ -3713,13 +3701,13 @@
         },
         {
             "name": "AppModule",
-            "id": "module-AppModule-d46e12504ee2d1fac3d329f14ce413771f615997612f42d892773617465a5a16834a91013919f1e907a83470c58d9aaeb9e23b0df7e79ce8f1e60de24b69acbb",
+            "id": "module-AppModule-cd7f158a33bcb715ddb1a034c2a743a621b9c270b9de20a3216831a9934ecc591d093e38669dfb223d85aabf87ea75208899da9550aea4e05aadd9e8d0cae073",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { AngularFireModule } from '@angular/fire/compat';\r\nimport { AngularFireAuthModule } from '@angular/fire/compat/auth';\r\nimport { AngularFirestoreModule } from '@angular/fire/compat/firestore';\r\nimport { AngularFireStorageModule } from '@angular/fire/compat/storage';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { RouteReuseStrategy } from '@angular/router';\r\nimport { IonicModule, IonicRouteStrategy } from '@ionic/angular';\r\nimport { environment } from '../environments/environment';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\n\r\n@NgModule({\r\n  declarations: [AppComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    IonicModule.forRoot(),\r\n    AppRoutingModule,\r\n    AngularFireModule.initializeApp(environment.firebase),\r\n    AngularFireStorageModule,\r\n    AngularFirestoreModule,\r\n    AngularFireAuthModule,\r\n  ],\r\n  providers: [\r\n    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },\r\n  ],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {\r\n}\r\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { AngularFireModule } from '@angular/fire/compat';\r\nimport { AngularFireAuthModule } from '@angular/fire/compat/auth';\r\nimport { AngularFirestoreModule } from '@angular/fire/compat/firestore';\r\nimport { AngularFireStorageModule } from '@angular/fire/compat/storage';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\r\nimport { RouteReuseStrategy } from '@angular/router';\r\nimport { IonicModule, IonicRouteStrategy } from '@ionic/angular';\r\nimport { environment } from '../environments/environment';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\n\r\n\r\n@NgModule({\r\n  declarations: [AppComponent],\r\n  imports: [\r\n    BrowserModule,\r\n    IonicModule.forRoot(),\r\n    BrowserAnimationsModule,\r\n    AppRoutingModule,\r\n    AngularFireModule.initializeApp(environment.firebase),\r\n    AngularFireStorageModule,\r\n    AngularFirestoreModule,\r\n    AngularFireAuthModule,\r\n  ],\r\n  providers: [\r\n    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },\r\n  ],\r\n  bootstrap: [AppComponent],\r\n})\r\nexport class AppModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4527,6 +4515,16 @@
                 "defaultValue": "{\r\n  color: [\r\n    '#b21ab4',\r\n    '#6f0099',\r\n    '#2a2073',\r\n    '#0b5ea8',\r\n    '#17aecc',\r\n    '#b3b3ff',\r\n    '#eb99ff',\r\n    '#fae6ff',\r\n    '#e6f2ff',\r\n    '#eeeeee'\r\n  ],\r\n\r\n  title: {\r\n    textStyle: {\r\n      fontWeight: 'normal',\r\n      color: '#00aecd'\r\n    }\r\n  },\r\n\r\n  visualMap: {\r\n    color: ['#00aecd', '#a2d4e6']\r\n  },\r\n\r\n  toolbox: {\r\n    color: ['#00aecd', '#00aecd', '#00aecd', '#00aecd']\r\n  },\r\n\r\n  tooltip: {\r\n    backgroundColor: 'rgba(0,0,0,0.5)',\r\n    axisPointer: {\r\n      // Axis indicator, coordinate trigger effective\r\n      type: 'line', // The default is a straight line： 'line' | 'shadow'\r\n      lineStyle: {\r\n        // Straight line indicator style settings\r\n        color: '#00aecd',\r\n        type: 'dashed'\r\n      },\r\n      crossStyle: {\r\n        color: '#00aecd'\r\n      },\r\n      shadowStyle: {\r\n        // Shadow indicator style settings\r\n        color: 'rgba(200,200,200,0.3)'\r\n      }\r\n    }\r\n  },\r\n\r\n  // Area scaling controller\r\n  dataZoom: {\r\n    dataBackgroundColor: '#eee', // Data background color\r\n    fillerColor: 'rgba(144,197,237,0.2)', // Fill the color\r\n    handleColor: '#00aecd' // Handle color\r\n  },\r\n\r\n  timeline: {\r\n    lineStyle: {\r\n      color: '#00aecd'\r\n    },\r\n    controlStyle: {\r\n      color: '#00aecd',\r\n      borderColor: '00aecd'\r\n    }\r\n  },\r\n\r\n  candlestick: {\r\n    itemStyle: {\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    lineStyle: {\r\n      width: 1,\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    areaStyle: {\r\n      color: '#b21ab4',\r\n      color0: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  chord: {\r\n    padding: 4,\r\n    itemStyle: {\r\n      color: '#b21ab4',\r\n      borderWidth: 1,\r\n      borderColor: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    lineStyle: {\r\n      color: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    areaStyle: {\r\n      color: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  graph: {\r\n    itemStyle: {\r\n      color: '#b21ab4'\r\n    },\r\n    linkStyle: {\r\n      color: '#2a2073'\r\n    }\r\n  },\r\n\r\n  map: {\r\n    itemStyle: {\r\n      color: '#c12e34'\r\n    },\r\n    areaStyle: {\r\n      color: '#ddd'\r\n    },\r\n    label: {\r\n      color: '#c12e34'\r\n    }\r\n  },\r\n\r\n  gauge: {\r\n    axisLine: {\r\n      lineStyle: {\r\n        color: [\r\n          [0.2, '#dddddd'],\r\n          [0.8, '#00aecd'],\r\n          [1, '#f5ccff']\r\n        ],\r\n        width: 8\r\n      }\r\n    }\r\n  }\r\n}"
             },
             {
+                "name": "datePicker",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/date-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "entriesView",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4540,21 +4538,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: false,\r\n  production: true\r\n}"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: false,\r\n  production: true\r\n}"
             },
             {
                 "name": "expensePath",
@@ -4629,11 +4627,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/date-picker.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DatePickerComponent>",
+                "defaultValue": "(args: DatePickerComponent) => ({\r\n  component: DatePickerComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Button')\r\n  },\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/entries-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<EntriesViewComponent>",
-                "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Button')\r\n  }\r\n})"
+                "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Date Picker')\r\n  }\r\n})"
             }
         ],
         "functions": [],
@@ -4727,6 +4735,28 @@
                     "defaultValue": "{\r\n  color: [\r\n    '#b21ab4',\r\n    '#6f0099',\r\n    '#2a2073',\r\n    '#0b5ea8',\r\n    '#17aecc',\r\n    '#b3b3ff',\r\n    '#eb99ff',\r\n    '#fae6ff',\r\n    '#e6f2ff',\r\n    '#eeeeee'\r\n  ],\r\n\r\n  title: {\r\n    textStyle: {\r\n      fontWeight: 'normal',\r\n      color: '#00aecd'\r\n    }\r\n  },\r\n\r\n  visualMap: {\r\n    color: ['#00aecd', '#a2d4e6']\r\n  },\r\n\r\n  toolbox: {\r\n    color: ['#00aecd', '#00aecd', '#00aecd', '#00aecd']\r\n  },\r\n\r\n  tooltip: {\r\n    backgroundColor: 'rgba(0,0,0,0.5)',\r\n    axisPointer: {\r\n      // Axis indicator, coordinate trigger effective\r\n      type: 'line', // The default is a straight line： 'line' | 'shadow'\r\n      lineStyle: {\r\n        // Straight line indicator style settings\r\n        color: '#00aecd',\r\n        type: 'dashed'\r\n      },\r\n      crossStyle: {\r\n        color: '#00aecd'\r\n      },\r\n      shadowStyle: {\r\n        // Shadow indicator style settings\r\n        color: 'rgba(200,200,200,0.3)'\r\n      }\r\n    }\r\n  },\r\n\r\n  // Area scaling controller\r\n  dataZoom: {\r\n    dataBackgroundColor: '#eee', // Data background color\r\n    fillerColor: 'rgba(144,197,237,0.2)', // Fill the color\r\n    handleColor: '#00aecd' // Handle color\r\n  },\r\n\r\n  timeline: {\r\n    lineStyle: {\r\n      color: '#00aecd'\r\n    },\r\n    controlStyle: {\r\n      color: '#00aecd',\r\n      borderColor: '00aecd'\r\n    }\r\n  },\r\n\r\n  candlestick: {\r\n    itemStyle: {\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    lineStyle: {\r\n      width: 1,\r\n      color: '#00aecd',\r\n      color0: '#a2d4e6'\r\n    },\r\n    areaStyle: {\r\n      color: '#b21ab4',\r\n      color0: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  chord: {\r\n    padding: 4,\r\n    itemStyle: {\r\n      color: '#b21ab4',\r\n      borderWidth: 1,\r\n      borderColor: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    lineStyle: {\r\n      color: 'rgba(128, 128, 128, 0.5)'\r\n    },\r\n    areaStyle: {\r\n      color: '#0b5ea8'\r\n    }\r\n  },\r\n\r\n  graph: {\r\n    itemStyle: {\r\n      color: '#b21ab4'\r\n    },\r\n    linkStyle: {\r\n      color: '#2a2073'\r\n    }\r\n  },\r\n\r\n  map: {\r\n    itemStyle: {\r\n      color: '#c12e34'\r\n    },\r\n    areaStyle: {\r\n      color: '#ddd'\r\n    },\r\n    label: {\r\n      color: '#c12e34'\r\n    }\r\n  },\r\n\r\n  gauge: {\r\n    axisLine: {\r\n      lineStyle: {\r\n        color: [\r\n          [0.2, '#dddddd'],\r\n          [0.8, '#00aecd'],\r\n          [1, '#f5ccff']\r\n        ],\r\n        width: 8\r\n      }\r\n    }\r\n  }\r\n}"
                 }
             ],
+            "src/stories/date-picker.stories.ts": [
+                {
+                    "name": "datePicker",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/date-picker.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DatePickerComponent>",
+                    "defaultValue": "(args: DatePickerComponent) => ({\r\n  component: DatePickerComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Button')\r\n  },\r\n})"
+                }
+            ],
             "src/stories/entries-list.stories.ts": [
                 {
                     "name": "entriesView",
@@ -4746,19 +4776,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<EntriesViewComponent>",
-                    "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Button')\r\n  }\r\n})"
-                }
-            ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: false,\r\n  production: true\r\n}"
+                    "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Date Picker')\r\n  }\r\n})"
                 }
             ],
             "src/environments/environment.ts": [
@@ -4771,6 +4789,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: false,\r\n  production: true\r\n}"
                 }
             ],
             "src/app/auth/auth.guards.ts": [
@@ -5648,10 +5678,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/User.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "User",
+                "filePath": "src/stories/date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "datePicker",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/date-picker.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

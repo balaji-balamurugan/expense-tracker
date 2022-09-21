@@ -11,7 +11,7 @@ export default {
     moduleMetadata({
       declarations: [DatePickerComponent],
       imports: [
-        IonicModule.forRoot()
+        IonicModule.forRoot(),
       ]
     })
   ]
@@ -22,7 +22,7 @@ const Template: Story<DatePickerComponent> = (args: DatePickerComponent) => ({
   props: {
     ...args,
     entryClicked: linkTo('Button')
-  }
+  },
 });
 
 export const datePicker = Template.bind({});

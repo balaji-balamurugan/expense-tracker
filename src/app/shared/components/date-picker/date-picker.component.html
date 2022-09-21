@@ -10,15 +10,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-datetime presentation="date"
-    size="cover"
-    #dateTime></ion-datetime>
-</ion-content>
+<ion-datetime presentation="date"
+  size="cover"
+  #dateTime>
+</ion-datetime>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="block"
-      (click)="modalController.dismiss(this.dateTime.value)">Select</ion-button>
+    <ion-button expand="block">Select</ion-button>
   </ion-toolbar>
 </ion-footer>
