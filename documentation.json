@@ -2368,7 +2368,7 @@
         },
         {
             "name": "EntriesViewComponent",
-            "id": "component-EntriesViewComponent-8a516cbd577b28206e613757c65d566d3b2cc8871a0ab6685f0d584f4647b090cbf5fb064de32a35ec572d232edbb988cd40510820454ba6f9c1257b1ae0144c",
+            "id": "component-EntriesViewComponent-38d887a5d4ac2a21554fc5ecbbd4e9b9f3c745302d562826d4f1738599c380e4af913070b38503414d5ae42528ed6018e4a28b62792b063eec547d8f70a5fc16",
             "file": "src/app/shared/components/entries-view/entries-view.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -2387,11 +2387,10 @@
             "inputsClass": [
                 {
                     "name": "date",
-                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 41,
-                    "type": "string",
+                    "type": "Date",
                     "decorators": []
                 },
                 {
@@ -2430,7 +2429,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-entries-view',\r\n  template: `\r\n    <ion-item (click)=\"entryClicked.emit()\" data-testid=\"entry-item\">\r\n      <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\r\n      <ion-label>\r\n        <h6>\r\n          <b data-testid=\"entry-name\">{{name}}</b>\r\n        </h6>\r\n        <p data-testid=\"entry-date\">{{date}}</p>\r\n      </ion-label>\r\n      <ion-text class=\"ion-text-end\" slot=\"end\">\r\n        <p>\r\n          <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\r\n        </p>\r\n        <small>\r\n          <ion-text color=\"medium\" data-testid=\"entry-payment\">{{paymentMethod}}</ion-text>\r\n        </small>\r\n      </ion-text>\r\n    </ion-item>\r\n  `,\r\n  styles: [\r\n    `\r\n    h6{\r\n      font-size:14px;\r\n    }\r\n    p{\r\n      font-size: 13px;\r\n    }`\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class EntriesViewComponent {\r\n\r\n  @Input()\r\n  name!: string;\r\n\r\n  @Input()\r\n  date = '';\r\n\r\n  @Input()\r\n  paymentMethod!: string;\r\n\r\n  @Output()\r\n  entryClicked = new EventEmitter<void>();\r\n}\r\n\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-entries-view',\r\n  template: `\r\n    <ion-item (click)=\"entryClicked.emit()\" data-testid=\"entry-item\">\r\n      <ion-icon name=\"fast-food-outline\" slot=\"start\" size=\"small\"></ion-icon>\r\n      <ion-label>\r\n        <h6>\r\n          <b data-testid=\"entry-name\">{{name}}</b>\r\n        </h6>\r\n        <p data-testid=\"entry-date\">{{date}}</p>\r\n      </ion-label>\r\n      <ion-text class=\"ion-text-end\" slot=\"end\">\r\n        <p>\r\n          <ion-text color=\"dark\">-$200 + Vat 1%</ion-text>\r\n        </p>\r\n        <small>\r\n          <ion-text color=\"medium\" data-testid=\"entry-payment\">{{paymentMethod}}</ion-text>\r\n        </small>\r\n      </ion-text>\r\n    </ion-item>\r\n  `,\r\n  styles: [\r\n    `\r\n    h6{\r\n      font-size:14px;\r\n    }\r\n    p{\r\n      font-size: 13px;\r\n    }`\r\n  ],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class EntriesViewComponent {\r\n\r\n  @Input()\r\n  name!: string;\r\n\r\n  @Input()\r\n  date!: Date;\r\n\r\n  @Input()\r\n  paymentMethod!: string;\r\n\r\n  @Output()\r\n  entryClicked = new EventEmitter<void>();\r\n}\r\n\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n    h6{\n      font-size:14px;\n    }\n    p{\n      font-size: 13px;\n    }\n"
@@ -3012,7 +3011,7 @@
         },
         {
             "name": "OverviewPage",
-            "id": "component-OverviewPage-c972e05b8b190b84d854bed6bd6d620bde0375f35c760cb2e72442542195ecbf32633db51ced6aa05d8388a8007b65b5578505d06abc539078e3f668f243e3f6",
+            "id": "component-OverviewPage-847fae2f721dfa14caa9d334aa362f8978e8bedd7676463132f3f515f804cbda0478af4900668d4f7e2ca24296bc838a53998c522e9fdbfdaaec1d93a96f129c",
             "file": "src/app/pages/overview/overview.page.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3039,17 +3038,17 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 10
                 },
                 {
-                    "name": "data",
-                    "defaultValue": "[]",
+                    "name": "date",
+                    "defaultValue": "new Date()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "[]",
+                    "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 11
                 }
             ],
             "methodsClass": [
@@ -3071,7 +3070,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-overview',\r\n  templateUrl: './overview.page.html',\r\n  styleUrls: ['./overview.page.scss'],\r\n})\r\nexport class OverviewPage implements OnInit {\r\n  data = [];\r\n  categories: any[] = [];\r\n\r\n  constructor(\r\n    private http: HttpClient\r\n  ) { }\r\n\r\n  ngOnInit() {\r\n    this.http.get('./assets/data/db.json')\r\n      .subscribe((res: any) => {\r\n        this.data = res;\r\n        this.categories = res.categories;\r\n      });\r\n  }\r\n}\r\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-overview',\r\n  templateUrl: './overview.page.html',\r\n  styleUrls: ['./overview.page.scss'],\r\n})\r\nexport class OverviewPage implements OnInit {\r\n  categories: any[] = [];\r\n  date = new Date();\r\n\r\n  constructor(\r\n    private http: HttpClient\r\n  ) { }\r\n\r\n  ngOnInit() {\r\n    this.http.get('./assets/data/db.json')\r\n      .subscribe((res: any) => {\r\n        this.categories = res.categories;\r\n      });\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3109,7 +3108,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Overview</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"wave ion-padding-vertical\">\r\n    <swiper class=\"overview-swiper-wrapper\"\r\n      [spaceBetween]=\"0\"\r\n      [slidesPerView]=\"2.5\">\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Salary</ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top select\"\r\n          [routerLink]=\"['/expense']\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Monthly Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n    </swiper>\r\n\r\n    <ion-img src=\"../../../assets/images/svg.png\"></ion-img>\r\n  </div>\r\n\r\n  <swiper class=\"overview-category-wrapper\"\r\n    [slidesPerView]=\"3\"\r\n    [spaceBetween]=\"10\">\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/savings']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Savings</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/reminder']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Reminder</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/goals']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Goals</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n  </swiper>\r\n\r\n  <ion-list class=\"latest-entries-list\">\r\n    <ion-item lines=\"none\">\r\n      <ion-label>\r\n        <b>Latest Entries</b>\r\n      </ion-label>\r\n      <ion-button slot=\"end\"\r\n        size=\"small\"\r\n        [routerLink]=\"['/entries-list']\">\r\n        <ion-icon name=\"ellipsis-horizontal-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-item>\r\n\r\n    <ng-container *ngFor=\"let num of [].constructor(5)\">\r\n      <et-entries-view [name]=\"'Food'\"\r\n        [date]=\"'12/90/1990'\"\r\n        [paymentMethod]=\"'Google Pay'\">\r\n      </et-entries-view>\r\n    </ng-container>\r\n  </ion-list>\r\n\r\n  <ion-tabs>\r\n    <ion-tab-bar slot=\"bottom\">\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"home-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"stats-chart-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button></ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"calendar-clear-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"settings-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n    </ion-tab-bar>\r\n  </ion-tabs>\r\n\r\n  <ion-fab vertical=\"bottom\"\r\n    horizontal=\"center\"\r\n    slot=\"fixed\"\r\n    [routerLink]=\"['/add-entries']\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n</ion-content>\r\n"
+            "templateData": "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Overview</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"wave ion-padding-vertical\">\r\n    <swiper class=\"overview-swiper-wrapper\"\r\n      [spaceBetween]=\"0\"\r\n      [slidesPerView]=\"2.5\">\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Salary</ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top select\"\r\n          [routerLink]=\"['/expense']\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Monthly Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n    </swiper>\r\n\r\n    <ion-img src=\"../../../assets/images/svg.png\"></ion-img>\r\n  </div>\r\n\r\n  <swiper class=\"overview-category-wrapper\"\r\n    [slidesPerView]=\"3\"\r\n    [spaceBetween]=\"10\">\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/savings']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Savings</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/reminder']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Reminder</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/goals']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Goals</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n  </swiper>\r\n\r\n  <ion-list class=\"latest-entries-list\">\r\n    <ion-item lines=\"none\">\r\n      <ion-label>\r\n        <b>Latest Entries</b>\r\n      </ion-label>\r\n      <ion-button slot=\"end\"\r\n        size=\"small\"\r\n        [routerLink]=\"['/entries-list']\">\r\n        <ion-icon name=\"ellipsis-horizontal-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-item>\r\n\r\n    <ng-container *ngFor=\"let num of [].constructor(5)\">\r\n      <et-entries-view [name]=\"'Food'\"\r\n        [date]=\"date\"\r\n        [paymentMethod]=\"'Google Pay'\">\r\n      </et-entries-view>\r\n    </ng-container>\r\n  </ion-list>\r\n\r\n  <ion-tabs>\r\n    <ion-tab-bar slot=\"bottom\">\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"home-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"stats-chart-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button></ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"calendar-clear-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"settings-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n    </ion-tab-bar>\r\n  </ion-tabs>\r\n\r\n  <ion-fab vertical=\"bottom\"\r\n    horizontal=\"center\"\r\n    slot=\"fixed\"\r\n    [routerLink]=\"['/add-entries']\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n</ion-content>\r\n"
         },
         {
             "name": "PageNotFoundPage",
@@ -4474,7 +4473,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "Template.bind({})"
+                "defaultValue": "story.bind({})"
             },
             {
                 "name": "environment",
@@ -4527,6 +4526,16 @@
                 "defaultValue": "'income'"
             },
             {
+                "name": "overview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/overview.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "story.bind({})"
+            },
+            {
                 "name": "redirectLoggedInToOverview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4557,6 +4566,26 @@
                 "defaultValue": "[\r\n  {\r\n    path: '',\r\n    component: LogoutPage\r\n  }\r\n]"
             },
             {
+                "name": "story",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/entries-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<EntriesViewComponent>",
+                "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Date Picker')\r\n  }\r\n})"
+            },
+            {
+                "name": "story",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/overview.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<OverviewPage>",
+                "defaultValue": "(args: OverviewPage) => ({\r\n  component: OverviewPage,\r\n  props: args\r\n})"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4565,16 +4594,6 @@
                 "deprecationMessage": "",
                 "type": "Story<DatePickerComponent>",
                 "defaultValue": "(args: DatePickerComponent) => ({\r\n  component: DatePickerComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Button')\r\n  },\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/entries-list.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<EntriesViewComponent>",
-                "defaultValue": "(args: EntriesViewComponent) => ({\r\n  component: EntriesViewComponent,\r\n  props: {\r\n    ...args,\r\n    entryClicked: linkTo('Date Picker')\r\n  }\r\n})"
             }
         ],
         "functions": [],
@@ -4666,10 +4685,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "Template.bind({})"
+                    "defaultValue": "story.bind({})"
                 },
                 {
-                    "name": "Template",
+                    "name": "story",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/entries-list.stories.ts",
@@ -4701,6 +4720,28 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n  firebase: {\r\n    projectId: 'expense-tracker-app-bf2ba',\r\n    appId: '1:792008958304:web:3cea14c4168db2158cfe05',\r\n    storageBucket: 'expense-tracker-app-bf2ba.appspot.com',\r\n    apiKey: 'AIzaSyAH8dCLL4_oTP4N8nEgLvy-6oAmM-OkVfM',\r\n    authDomain: 'expense-tracker-app-bf2ba.firebaseapp.com',\r\n    messagingSenderId: '792008958304',\r\n    measurementId: 'G-G55GZ584TW',\r\n  },\r\n  useEmulators: true,\r\n  production: false\r\n}"
+                }
+            ],
+            "src/stories/overview.stories.ts": [
+                {
+                    "name": "overview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/overview.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "story.bind({})"
+                },
+                {
+                    "name": "story",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/overview.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<OverviewPage>",
+                    "defaultValue": "(args: OverviewPage) => ({\r\n  component: OverviewPage,\r\n  props: args\r\n})"
                 }
             ],
             "src/app/auth/auth.guards.ts": [
@@ -5593,7 +5634,27 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Template",
+                "name": "story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/overview.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "overview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/overview.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "story",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

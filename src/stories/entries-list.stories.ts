@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import { IonicModule } from '@ionic/angular';
 import { linkTo } from '@storybook/addon-links';
 import { Meta, moduleMetadata, Story } from '@storybook/angular/';
@@ -17,7 +16,7 @@ export default {
   ]
 } as Meta;
 
-const Template: Story<EntriesViewComponent> = (args: EntriesViewComponent) => ({
+const story: Story<EntriesViewComponent> = (args: EntriesViewComponent) => ({
   component: EntriesViewComponent,
   props: {
     ...args,
@@ -25,7 +24,7 @@ const Template: Story<EntriesViewComponent> = (args: EntriesViewComponent) => ({
   }
 });
 
-export const entriesView = Template.bind({});
+export const entriesView = story.bind({});
 
 entriesView.args = {
   name: 'Hello',

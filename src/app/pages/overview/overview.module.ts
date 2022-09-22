@@ -26,5 +26,6 @@ const routes: Routes = [
     EntriesViewComponentModule
   ],
   declarations: [OverviewPage],
+  exports: [OverviewPage]
 })
 export class OverviewPageModule { }
