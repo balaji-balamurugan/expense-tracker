@@ -3011,7 +3011,7 @@
         },
         {
             "name": "OverviewPage",
-            "id": "component-OverviewPage-847fae2f721dfa14caa9d334aa362f8978e8bedd7676463132f3f515f804cbda0478af4900668d4f7e2ca24296bc838a53998c522e9fdbfdaaec1d93a96f129c",
+            "id": "component-OverviewPage-3bf5a28a1891f6730903dd730c948a91293de9b786fa98111e5e106613f7252f7329cc5dbec03c4edbbdefba45d7b54984d1ae4f1f8b254ed64ec1c874fdd421",
             "file": "src/app/pages/overview/overview.page.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3038,7 +3038,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 10
+                    "line": 9
                 },
                 {
                     "name": "date",
@@ -3048,21 +3048,10 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 10
                 }
             ],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -3070,7 +3059,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Component, OnInit } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-overview',\r\n  templateUrl: './overview.page.html',\r\n  styleUrls: ['./overview.page.scss'],\r\n})\r\nexport class OverviewPage implements OnInit {\r\n  categories: any[] = [];\r\n  date = new Date();\r\n\r\n  constructor(\r\n    private http: HttpClient\r\n  ) { }\r\n\r\n  ngOnInit() {\r\n    this.http.get('./assets/data/db.json')\r\n      .subscribe((res: any) => {\r\n        this.categories = res.categories;\r\n      });\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'et-overview',\r\n  templateUrl: './overview.page.html',\r\n  styleUrls: ['./overview.page.scss'],\r\n})\r\nexport class OverviewPage {\r\n  categories: any[] = [];\r\n  date = new Date();\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3079,36 +3068,7 @@
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 11,
-                "jsdoctags": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>Overview</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <div class=\"wave ion-padding-vertical\">\r\n    <swiper class=\"overview-swiper-wrapper\"\r\n      [spaceBetween]=\"0\"\r\n      [slidesPerView]=\"2.5\">\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Salary</ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top select\"\r\n          [routerLink]=\"['/expense']\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Total Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"card-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n              color=\"medium\">Monthly Expense\r\n            </ion-card-subtitle>\r\n          </ion-card-header>\r\n          <ion-card-content class=\"ion-padding\">\r\n            <h6 color=\"dark\"><b>$</b></h6>\r\n            <p color=\"dark\"><b>1800.00</b></p>\r\n          </ion-card-content>\r\n        </ion-card>\r\n      </ng-template>\r\n    </swiper>\r\n\r\n    <ion-img src=\"../../../assets/images/svg.png\"></ion-img>\r\n  </div>\r\n\r\n  <swiper class=\"overview-category-wrapper\"\r\n    [slidesPerView]=\"3\"\r\n    [spaceBetween]=\"10\">\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/savings']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Savings</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/reminder']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Reminder</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n    <ng-template swiperSlide>\r\n      <ion-card [routerLink]=\"['/goals']\">\r\n        <ion-card-header class=\"ion-padding\">\r\n          <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n          <ion-card-subtitle class=\"ion-text-capitalize\">Goals</ion-card-subtitle>\r\n        </ion-card-header>\r\n      </ion-card>\r\n    </ng-template>\r\n\r\n  </swiper>\r\n\r\n  <ion-list class=\"latest-entries-list\">\r\n    <ion-item lines=\"none\">\r\n      <ion-label>\r\n        <b>Latest Entries</b>\r\n      </ion-label>\r\n      <ion-button slot=\"end\"\r\n        size=\"small\"\r\n        [routerLink]=\"['/entries-list']\">\r\n        <ion-icon name=\"ellipsis-horizontal-outline\"></ion-icon>\r\n      </ion-button>\r\n    </ion-item>\r\n\r\n    <ng-container *ngFor=\"let num of [].constructor(5)\">\r\n      <et-entries-view [name]=\"'Food'\"\r\n        [date]=\"date\"\r\n        [paymentMethod]=\"'Google Pay'\">\r\n      </et-entries-view>\r\n    </ng-container>\r\n  </ion-list>\r\n\r\n  <ion-tabs>\r\n    <ion-tab-bar slot=\"bottom\">\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"home-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"stats-chart-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button></ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"calendar-clear-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n      <ion-tab-button size=\"large\">\r\n        <ion-icon name=\"settings-outline\"></ion-icon>\r\n      </ion-tab-button>\r\n\r\n    </ion-tab-bar>\r\n  </ion-tabs>\r\n\r\n  <ion-fab vertical=\"bottom\"\r\n    horizontal=\"center\"\r\n    slot=\"fixed\"\r\n    [routerLink]=\"['/add-entries']\">\r\n    <ion-fab-button>\r\n      <ion-icon name=\"add\"></ion-icon>\r\n    </ion-fab-button>\r\n  </ion-fab>\r\n\r\n</ion-content>\r\n"
+            "templateData": "<ion-app>\r\n  <ion-header>\r\n    <ion-toolbar>\r\n      <ion-title>Overview</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n  <ion-content>\r\n    <div class=\"wave ion-padding-vertical\">\r\n      <swiper class=\"overview-swiper-wrapper\"\r\n        [spaceBetween]=\"0\"\r\n        [slidesPerView]=\"2.5\">\r\n        <ng-template swiperSlide>\r\n          <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n            <ion-card-header class=\"ion-padding\">\r\n              <ion-icon name=\"card-outline\"></ion-icon>\r\n              <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n                color=\"medium\">Total Salary</ion-card-subtitle>\r\n            </ion-card-header>\r\n            <ion-card-content class=\"ion-padding\">\r\n              <h6 color=\"dark\"><b>$</b></h6>\r\n              <p color=\"dark\"><b>1800.00</b></p>\r\n            </ion-card-content>\r\n          </ion-card>\r\n        </ng-template>\r\n\r\n        <ng-template swiperSlide>\r\n          <ion-card class=\"ion-text-start ion-no-margin ion-margin-top select\"\r\n            [routerLink]=\"['/expense']\">\r\n            <ion-card-header class=\"ion-padding\">\r\n              <ion-icon name=\"card-outline\"></ion-icon>\r\n              <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n                color=\"medium\">Total Expense\r\n              </ion-card-subtitle>\r\n            </ion-card-header>\r\n            <ion-card-content class=\"ion-padding\">\r\n              <h6 color=\"dark\"><b>$</b></h6>\r\n              <p color=\"dark\"><b>1800.00</b></p>\r\n            </ion-card-content>\r\n          </ion-card>\r\n        </ng-template>\r\n\r\n        <ng-template swiperSlide>\r\n          <ion-card class=\"ion-text-start ion-no-margin ion-margin-top\">\r\n            <ion-card-header class=\"ion-padding\">\r\n              <ion-icon name=\"card-outline\"></ion-icon>\r\n              <ion-card-subtitle class=\"ion-text-capitalize ion-no-margin\"\r\n                color=\"medium\">Monthly Expense\r\n              </ion-card-subtitle>\r\n            </ion-card-header>\r\n            <ion-card-content class=\"ion-padding\">\r\n              <h6 color=\"dark\"><b>$</b></h6>\r\n              <p color=\"dark\"><b>1800.00</b></p>\r\n            </ion-card-content>\r\n          </ion-card>\r\n        </ng-template>\r\n      </swiper>\r\n\r\n      <ion-img src=\"../../../assets/images/svg.png\"></ion-img>\r\n    </div>\r\n\r\n    <swiper class=\"overview-category-wrapper\"\r\n      [slidesPerView]=\"3\"\r\n      [spaceBetween]=\"10\">\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card [routerLink]=\"['/savings']\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"add-circle-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize\">Savings</ion-card-subtitle>\r\n          </ion-card-header>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card [routerLink]=\"['/reminder']\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize\">Reminder</ion-card-subtitle>\r\n          </ion-card-header>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n      <ng-template swiperSlide>\r\n        <ion-card [routerLink]=\"['/goals']\">\r\n          <ion-card-header class=\"ion-padding\">\r\n            <ion-icon name=\"notifications-circle-outline\"></ion-icon>\r\n            <ion-card-subtitle class=\"ion-text-capitalize\">Goals</ion-card-subtitle>\r\n          </ion-card-header>\r\n        </ion-card>\r\n      </ng-template>\r\n\r\n    </swiper>\r\n\r\n    <ion-list class=\"latest-entries-list\">\r\n      <ion-item lines=\"none\">\r\n        <ion-label>\r\n          <b>Latest Entries</b>\r\n        </ion-label>\r\n        <ion-button slot=\"end\"\r\n          size=\"small\"\r\n          [routerLink]=\"['/entries-list']\">\r\n          <ion-icon name=\"ellipsis-horizontal-outline\"></ion-icon>\r\n        </ion-button>\r\n      </ion-item>\r\n\r\n      <ng-container *ngFor=\"let num of [].constructor(5)\">\r\n        <et-entries-view [name]=\"'Food'\"\r\n          [date]=\"date\"\r\n          [paymentMethod]=\"'Google Pay'\">\r\n        </et-entries-view>\r\n      </ng-container>\r\n    </ion-list>\r\n\r\n    <ion-tabs>\r\n      <ion-tab-bar slot=\"bottom\">\r\n\r\n        <ion-tab-button size=\"large\">\r\n          <ion-icon name=\"home-outline\"></ion-icon>\r\n        </ion-tab-button>\r\n\r\n        <ion-tab-button size=\"large\">\r\n          <ion-icon name=\"stats-chart-outline\"></ion-icon>\r\n        </ion-tab-button>\r\n\r\n        <ion-tab-button></ion-tab-button>\r\n\r\n        <ion-tab-button size=\"large\">\r\n          <ion-icon name=\"calendar-clear-outline\"></ion-icon>\r\n        </ion-tab-button>\r\n\r\n        <ion-tab-button size=\"large\">\r\n          <ion-icon name=\"settings-outline\"></ion-icon>\r\n        </ion-tab-button>\r\n\r\n      </ion-tab-bar>\r\n    </ion-tabs>\r\n\r\n    <ion-fab vertical=\"bottom\"\r\n      horizontal=\"center\"\r\n      slot=\"fixed\"\r\n      [routerLink]=\"['/add-entries']\">\r\n      <ion-fab-button>\r\n        <ion-icon name=\"add\"></ion-icon>\r\n      </ion-fab-button>\r\n    </ion-fab>\r\n  </ion-content>\r\n\r\n</ion-app>\r\n"
         },
         {
             "name": "PageNotFoundPage",
@@ -4194,13 +4154,13 @@
         },
         {
             "name": "OverviewPageModule",
-            "id": "module-OverviewPageModule-8d305b25174b4c4c9c97c8ec6be4102558a32b02e8ee1cce656a8ed61b01146e73738278c8cc95fc955c42edf1b0fed6663cb5b156e381707525811ccbdf8aa9",
+            "id": "module-OverviewPageModule-fc60e9d32a1ba3c260806d99e538b514e53e7cf7c0f6fbbf703f17ee0d71160be355c0594567fe07db1497246eee811598c3df7e215ad7c802fe40e8febe3aec",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/pages/overview/overview.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { IonicModule } from '@ionic/angular';\r\nimport { EntriesViewComponentModule } from 'src/app/shared/components/entries-view/entries-view.module';\r\nimport { SwiperModule } from 'swiper/angular';\r\nimport { OverviewPage } from './overview.page';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: '',\r\n    component: OverviewPage\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    IonicModule,\r\n    SwiperModule,\r\n    HttpClientModule,\r\n    RouterModule.forChild(routes),\r\n    EntriesViewComponentModule\r\n  ],\r\n  declarations: [OverviewPage],\r\n})\r\nexport class OverviewPageModule { }\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport { NgModule } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { RouterModule, Routes } from '@angular/router';\r\nimport { IonicModule } from '@ionic/angular';\r\nimport { EntriesViewComponentModule } from 'src/app/shared/components/entries-view/entries-view.module';\r\nimport { SwiperModule } from 'swiper/angular';\r\nimport { OverviewPage } from './overview.page';\r\n\r\nconst routes: Routes = [\r\n  {\r\n    path: '',\r\n    component: OverviewPage\r\n  }\r\n];\r\n\r\n@NgModule({\r\n  imports: [\r\n    CommonModule,\r\n    FormsModule,\r\n    IonicModule,\r\n    SwiperModule,\r\n    HttpClientModule,\r\n    RouterModule.forChild(routes),\r\n    EntriesViewComponentModule\r\n  ],\r\n  declarations: [OverviewPage],\r\n  exports: [OverviewPage]\r\n})\r\nexport class OverviewPageModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -4220,7 +4180,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "OverviewPage"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -5482,7 +5446,7 @@
                 "linktype": "component",
                 "name": "OverviewPage",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
