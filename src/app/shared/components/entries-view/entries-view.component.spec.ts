@@ -1,54 +1,38 @@
-import { DebugElement } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { IonicModule } from '@ionic/angular';
+import { byTestId, createComponentFactory, Spectator } from '@ngneat/spectator';
 import { EntriesViewComponent } from './entries-view.component';
 
 describe('EntriesViewComponent', () => {
-  let component: EntriesViewComponent;
-  let fixture: ComponentFixture<EntriesViewComponent>;
-  let debugElement: DebugElement;
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(EntriesViewComponent);
-    component = fixture.componentInstance;
-    debugElement = fixture.debugElement;
+  let spectator: Spectator<EntriesViewComponent>;
+  const createComponent = createComponentFactory({
+    component: EntriesViewComponent,
+    imports: [IonicModule.forRoot()]
   });
 
-  it('should emit event on item clicked', () => {
-    const mySpy = spyOn(component.entryClicked, 'emit').and.callThrough();
-    const hostItem = debugElement.query(
-      By.css('[data-testid="entry-item"]')
-    );
-    hostItem.triggerEventHandler('click', null);
-    fixture.detectChanges();
-    expect(mySpy).toHaveBeenCalled();
-    expect(mySpy).toHaveBeenCalledTimes(1);
-  });
+  beforeEach(() => spectator = createComponent());
 
   it('should display the date correctly', () => {
-    component.date = '26/07/2999';
-    const dateElement = debugElement.query(
-      By.css('[data-testid="entry-date"]')
-    );
-    fixture.detectChanges();
-    expect(dateElement.nativeElement?.textContent).toBe('26/07/2999');
+    spectator.setInput('date', '20/092/899');
+    expect(spectator.query(byTestId('entry-date'))).toBeTruthy();
+    expect(spectator.query(byTestId('entry-date'))).toHaveText('20/092/899');
   });
 
   it('should display the name correctly', () => {
-    component.name = 'Food';
-    const nameElement = debugElement.query(
-      By.css('[data-testid="entry-name"]')
-    );
-    fixture.detectChanges();
-    expect(nameElement.nativeElement?.textContent).toBe('Food');
+    spectator.setInput('name', 'Food');
+    expect(spectator.query(byTestId('entry-name'))).toBeTruthy();
+    expect(spectator.query(byTestId('entry-name'))).toHaveText('Food');
   });
 
-  it('should display the payment correctly', () => {
-    component.paymentMethod = 'cash';
-    const paymentElement = debugElement.query(
-      By.css('[data-testid="entry-payment"]')
-    );
-    fixture.detectChanges();
-    expect(paymentElement.nativeElement?.textContent).toBe('cash');
+  it('should display the paymentMethod correctly', () => {
+    spectator.setInput('paymentMethod', 'GooglePay');
+    expect(spectator.query(byTestId('entry-payment'))).toBeTruthy();
+    expect(spectator.query(byTestId('entry-payment'))).toHaveText('GooglePay');
   });
+
+  it('should emit event on item clicked', () => {
+    const spy = spyOn(spectator.component.entryClicked, 'emit');
+    spectator.component.entryClicked.emit();
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
+
 });

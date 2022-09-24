@@ -106,7 +106,7 @@
 
       <ng-container *ngFor="let num of [].constructor(5)">
         <et-entries-view [name]="'Food'"
-          [date]="date"
+          [date]="''"
           [paymentMethod]="'Google Pay'">
         </et-entries-view>
       </ng-container>
@@ -144,6 +144,7 @@
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
+
   </ion-content>
 
 </ion-app>
