@@ -1,12 +1,6 @@
 <ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Overview</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <div class="wave ion-padding-vertical">
+  <ion-content scrollY="true">
+    <div class="swiper-container">
       <swiper class="overview-swiper-wrapper"
         [spaceBetween]="0"
         [slidesPerView]="2.5">
@@ -56,41 +50,42 @@
         </ng-template>
       </swiper>
 
-      <ion-img src="../../../assets/images/svg.png"></ion-img>
+      <swiper class="overview-swiper-wrapper2"
+        [slidesPerView]="2.5"
+        [spaceBetween]="0">
+
+        <ng-template swiperSlide>
+          <ion-card [routerLink]="['/savings']"
+            class="ion-no-margin ion-margin-vertical">
+            <ion-card-header class="ion-padding">
+              <ion-icon name="add-circle-outline"></ion-icon>
+              <ion-card-subtitle class="ion-text-capitalize">Savings</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ng-template>
+
+        <ng-template swiperSlide>
+          <ion-card [routerLink]="['/reminder']"
+            class="ion-no-margin ion-margin-vertical">
+            <ion-card-header class="ion-padding">
+              <ion-icon name="notifications-circle-outline"></ion-icon>
+              <ion-card-subtitle class="ion-text-capitalize">Reminder</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ng-template>
+
+        <ng-template swiperSlide>
+          <ion-card [routerLink]="['/goals']"
+            class="ion-no-margin ion-margin-vertical">
+            <ion-card-header class="ion-padding">
+              <ion-icon name="notifications-circle-outline"></ion-icon>
+              <ion-card-subtitle class="ion-text-capitalize">Goals</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ng-template>
+
+      </swiper>
     </div>
-
-    <swiper class="overview-category-wrapper"
-      [slidesPerView]="3"
-      [spaceBetween]="10">
-
-      <ng-template swiperSlide>
-        <ion-card [routerLink]="['/savings']">
-          <ion-card-header class="ion-padding">
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <ion-card-subtitle class="ion-text-capitalize">Savings</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ng-template>
-
-      <ng-template swiperSlide>
-        <ion-card [routerLink]="['/reminder']">
-          <ion-card-header class="ion-padding">
-            <ion-icon name="notifications-circle-outline"></ion-icon>
-            <ion-card-subtitle class="ion-text-capitalize">Reminder</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ng-template>
-
-      <ng-template swiperSlide>
-        <ion-card [routerLink]="['/goals']">
-          <ion-card-header class="ion-padding">
-            <ion-icon name="notifications-circle-outline"></ion-icon>
-            <ion-card-subtitle class="ion-text-capitalize">Goals</ion-card-subtitle>
-          </ion-card-header>
-        </ion-card>
-      </ng-template>
-
-    </swiper>
 
     <ion-list class="latest-entries-list">
       <ion-item lines="none">
@@ -106,15 +101,19 @@
 
       <ng-container *ngFor="let num of [].constructor(5)">
         <et-entries-view [name]="'Food'"
-          [date]="''"
+          [date]="'20/9/2000'"
           [paymentMethod]="'Google Pay'">
         </et-entries-view>
       </ng-container>
     </ion-list>
 
+
+  </ion-content>
+
+  <ion-footer class="ion-no-border">
+    <!-- <ion-toolbar> -->
     <ion-tabs>
       <ion-tab-bar slot="bottom">
-
         <ion-tab-button size="large">
           <ion-icon name="home-outline"></ion-icon>
         </ion-tab-button>
@@ -132,19 +131,16 @@
         <ion-tab-button size="large">
           <ion-icon name="settings-outline"></ion-icon>
         </ion-tab-button>
-
       </ion-tab-bar>
+
+      <ion-fab vertical="bottom"
+        horizontal="center"
+        [routerLink]="['/add-entries']">
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
     </ion-tabs>
-
-    <ion-fab vertical="bottom"
-      horizontal="center"
-      slot="fixed"
-      [routerLink]="['/add-entries']">
-      <ion-fab-button>
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-  </ion-content>
-
+    <!-- </ion-toolbar> -->
+  </ion-footer>
 </ion-app>

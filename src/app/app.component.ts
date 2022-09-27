@@ -1,4 +1,5 @@
 /* eslint-disable @angular-eslint/component-selector */
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() { }
+  constructor(public location: Location) { }
 }

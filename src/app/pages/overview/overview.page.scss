@@ -1,21 +1,15 @@
-.wave {
-  position: relative;
+.swiper-container {
   background: var(--ion-color-light);
-  // &::before {
-  //   position: absolute;
-  //   content: url('/assets/images/svg2.png');
-  //   width: 100%;
-  //   height: 100px;
-  // }
 }
 
-
 .overview-swiper-wrapper {
+  padding: 20px 0px !important;
   ion-card {
-    min-height: 145px !important;
-    min-width: 100px !important;
-    box-shadow: none;
+    min-height: 150px !important;
+    min-width: 120px !important;
+    max-width: 120px !important;
     border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
     ion-card-subtitle {
       font-size: 12px;
@@ -37,9 +31,13 @@
   }
 }
 
-.overview-category-wrapper {
+.overview-swiper-wrapper2 {
+  padding: 20px 0px !important;
   ion-card {
+    min-height: 80px !important;
+    min-width: 120px !important;
     border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 
     ion-card-subtitle {
       font-size: 12px;
@@ -49,9 +47,21 @@
       color: var(--ion-color-dark);
     }
   }
+
+  .select {
+    background: var(--ion-color-secondary);
+
+    ion-icon,
+    ion-card-subtitle,
+    ion-card-content {
+      color: var(--ion-color-white);
+    }
+  }
 }
 
 .latest-entries-list {
+  height: 500px !important;
+  overflow-y: auto;
   ion-button {
     --background: rgba(var(--ion-color-primary-rgb, 0, 0, 0), 0.5);
   }
