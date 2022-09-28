@@ -60,9 +60,10 @@
 }
 
 .latest-entries-list {
-  height: 500px !important;
-  overflow-y: auto;
+  min-height: 300px !important;
+  overflow-y: scroll;
   ion-button {
     --background: rgba(var(--ion-color-primary-rgb, 0, 0, 0), 0.5);
   }
 }
+
