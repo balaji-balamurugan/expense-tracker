@@ -12,15 +12,14 @@
 
 <ion-content color="light">
   <form [formGroup]="expenseForm">
-
     <ion-list class="add-expense-list">
-
       <ion-item id="open-modal"
         lines="none"
         color="light">
         <ion-label position="stacked">Choose Date</ion-label>
         <ion-input class="ion-text-start"
-          [value]="(expenseForm.get('date')?.value | date: 'MMM d, yyyy')"> </ion-input>
+          [value]="(expenseForm.get('date')?.value | date: 'MMM d, yyyy')">
+        </ion-input>
       </ion-item>
 
       <ion-item lines="none"
@@ -50,7 +49,7 @@
         </div>
       </ion-item>
 
-      <ion-item lines="none"
+      <!-- <ion-item lines="none"
         color="light">
         <ion-label position="stacked">Expense Resit Photo</ion-label>
         <ion-button class="photo-btn"
@@ -61,7 +60,7 @@
             slot="start"></ion-icon>
           Add Photo
         </ion-button>
-      </ion-item>
+      </ion-item> -->
     </ion-list>
 
     <ion-modal trigger="open-modal">
@@ -85,15 +84,12 @@
         </ion-content>
       </ng-template>
     </ion-modal>
-
   </form>
-
-
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
     <ion-button expand="block"
-      (click)="expense()">Add Expense</ion-button>
+      (click)="addExpense()">Add Expense</ion-button>
   </ion-toolbar>
 </ion-footer>
