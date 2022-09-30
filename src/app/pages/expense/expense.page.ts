@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component } from '@angular/core';
-import { EChartsOption, LegendComponentOption } from 'echarts';
+import { EChartsOption } from 'echarts';
 import { ThemeOption } from 'ngx-echarts';
 
 export const CoolTheme = {
@@ -146,19 +146,12 @@ export class ExpensePage {
   coolTheme = CoolTheme;
   options: EChartsOption = {
     title: {
-      text: 'Nightingale\'s Rose Diagram',
-      subtext: 'Mocking Data',
       x: 'center'
     } as any,
     tooltip: {
       trigger: 'item',
       formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
-    legend: {
-      x: 'center',
-      y: 'bottom',
-      data: ['rose1', 'rose2', 'rose3', 'rose4', 'rose5', 'rose6', 'rose7', 'rose8']
-    } as LegendComponentOption,
     calculable: true,
     series: [
       {
@@ -179,4 +172,9 @@ export class ExpensePage {
       }
     ]
   };
+
+  onDateChange(event: CustomEvent): void {
+    console.log(event.detail?.value);
+  }
+
 }

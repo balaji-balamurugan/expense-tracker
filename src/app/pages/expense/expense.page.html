@@ -1,17 +1,19 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button auto-hide="false"></ion-back-button>
     </ion-buttons>
     <ion-title>Total Expenses</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
   <ion-list class="expense-list">
     <ion-item class="date-picker"
       lines="none">
-      <ion-datetime presentation="date"></ion-datetime>
+      <ion-datetime presentation="date"
+        [multiple]="true"
+        (ionChange)="onDateChange($any($event))"></ion-datetime>
     </ion-item>
 
     <ion-card class="ion-padding-vertical ion-text-center">

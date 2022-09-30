@@ -1,5 +1,8 @@
 ion-list {
+  padding: 5px auto !important;
   .date-picker {
+    margin: auto 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
     --ripple-color: var(--ion-color-white);
 
     ion-datetime {
@@ -12,6 +15,7 @@ ion-list {
 
 .expense-list {
   ion-card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px !important;
     .total {
       background: var(--ion-color-secondary);
       color: var(--ion-color-white);
