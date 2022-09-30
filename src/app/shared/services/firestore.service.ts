@@ -24,6 +24,7 @@ export class FirestoreService {
       .subscribe((authState) => {
         this.userAuthState = authState;
       });
+    console.log(this.tenantID);
   }
 
   /// ****** Get a Reference ****** ///

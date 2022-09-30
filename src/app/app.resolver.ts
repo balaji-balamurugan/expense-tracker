@@ -1,6 +1,5 @@
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-/* eslint-disable no-underscore-dangle */
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -12,17 +11,17 @@ import { FirestoreService } from './shared/services/firestore.service';
 export class AppResolver implements Resolve<boolean> {
 
   constructor(
-    private _firestore: FirestoreService,
-    private _authService: AngularFireAuth
+    private firestore: FirestoreService,
+    private authService: AngularFireAuth
   ) { }
 
   resolve(): Observable<boolean> {
-    return this._authService
+    return this.authService
       .authState
       .pipe(
         tap((authState) => {
-          console.log('authState:', authState);
-          this._firestore.initializeApp(authState?.uid as string);
+          console.log('authState:', authState?.uid);
+          this.firestore.initializeApp(authState?.uid as string);
         }),
         map((authState) => !!authState)
       );
